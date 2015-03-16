@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ZSSGroupQuerier: NSObject {
     
@@ -16,6 +17,11 @@ class ZSSGroupQuerier: NSObject {
         }
         return Static.instance
     }
+    
+    func findCurrentUserGroupsInBackgroundWithCompletion(completion: ((error: NSError?, groups:[ZSSGroup]) -> Void)) {
+        completion(error: nil, groups: [])
+    }
+
     
     
     
