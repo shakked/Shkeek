@@ -10,8 +10,10 @@ import CoreData
 
 class ZSSLocalStore: NSObject {
     
-    var context : NSManagedObjectContext!
-    var model : NSManagedObjectModel!
+    private var context : NSManagedObjectContext!
+    private var model : NSManagedObjectModel!
+    var privateUser : ZSSUser?
+    private var privateGroups : [ZSSGroup]?
     
     class var sharedQuerier: ZSSLocalStore {
         struct Static {
@@ -20,14 +22,17 @@ class ZSSLocalStore: NSObject {
         return Static.instance
     }
     
-    func userGroups() -> [ZSSGroup]? {
-        
-        return nil
+    override init() {
+        super.init()
+        configureCoreData()
+    }
+    
+    func groups() -> [ZSSGroup]? {
+        return privateGroups
     }
     
     func user() -> ZSSUser? {
-        
-        return nil
+        return privateUser
     }
     
     func configureCoreData() -> Void {
@@ -67,6 +72,31 @@ class ZSSLocalStore: NSObject {
     }
     
     func loadAllItems() -> Void {
+        if (privateUser == nil) {
+            let request = NSFetchRequest()
+            let e = NSEntityDescription.entityForName("ZSSUser", inManagedObjectContext: context)
+            request.entity = e
+            
+            var error : NSError?
+            let results : [ZSSUser]? = context.executeFetchRequest(request, error: &error) as [ZSSUser]?
+            if (results == nil) {
+                NSException.raise("Fetch failed", format:"Error: %@", arguments:getVaList([error!]))
+            }
+            privateUser = results![0]
+        }
+        
+        if (privateGroups == nil) {
+            let request = NSFetchRequest()
+            let e = NSEntityDescription.entityForName("ZSSGroup", inManagedObjectContext: context)
+            request.entity = e
+            
+            var error : NSError?
+            let results : [ZSSGroup]? = context.executeFetchRequest(request, error: &error) as [ZSSGroup]?
+            if (results == nil) {
+                NSException.raise("Fetch failed", format:"Error: %@", arguments:getVaList([error!]))
+            }
+            privateGroups = results!
+        }
         
     }
     
