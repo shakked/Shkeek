@@ -27,6 +27,10 @@ class ZSSLocalStore: NSObject {
         configureCoreData()
     }
     
+    func user() -> ZSSUser? {
+        return privateUser
+    }
+    
     func groups() -> [ZSSGroup]? {
         if (privateGroups == nil) {
             return []
@@ -35,17 +39,53 @@ class ZSSLocalStore: NSObject {
         }
     }
     
-    func user() -> ZSSUser? {
-        return privateUser
+    func createGroup() -> ZSSGroup? {
+        var group : ZSSGroup = NSEntityDescription.insertNewObjectForEntityForName("ZSSGroup", inManagedObjectContext: context) as ZSSGroup
+        privateGroups!.append(group)
+        return group
     }
     
-    func saveCoreDataChanges() -> Bool {
-        var error : NSError?
-        let successful = context.save(&error)
-        if (!successful) {
-            println("Error saving \(error!.localizedDescription)")
+    func fetchGroupWithObjectId(#objectId: String) -> ZSSGroup? {
+        if let groups = privateGroups {
+            for group in groups {
+                if group.objectId == objectId {
+                    return group
+                }
+            }
         }
-        return successful
+        return nil
+    }
+    
+    func deleteGroup(#group: ZSSGroup) -> Bool {
+        context.deleteObject(group)
+        return saveCoreDataChanges()
+    }
+    
+    func createUser() -> ZSSUser? {
+        if !userExists() {
+            var user : ZSSUser = NSEntityDescription.insertNewObjectForEntityForName("ZSSUser", inManagedObjectContext: context) as ZSSUser
+            privateUser = user
+            return user
+        } else {
+            let userAlreadyExistsException = NSException(name: "UserAlreadyExistsException", reason: "A user has already been created for the current session. To create another user, the current one must first be deleted or signed out.", userInfo: nil)
+            userAlreadyExistsException.raise()
+        }
+        return nil
+    }
+    
+    func deleteUser() -> Bool {
+        if let user = privateUser {
+            context.deleteObject(user)
+        }
+        return saveCoreDataChanges()
+    }
+    
+    func userExists() -> Bool {
+        if let user = privateUser {
+            return true
+        } else {
+            return false
+        }
     }
     
     func deleteAllObjects() -> Void {
@@ -58,52 +98,16 @@ class ZSSLocalStore: NSObject {
         }
     }
     
-    func deleteUser() -> Bool {
-        if let user = privateUser {
-            context.deleteObject(user)
+    func saveCoreDataChanges() -> Bool {
+        var error : NSError?
+        let successful = context.save(&error)
+        if (!successful) {
+            println("Error saving \(error!.localizedDescription)")
         }
-        return saveCoreDataChanges()
+        return successful
     }
     
-    func deleteGroup(group: ZSSGroup) -> Bool {
-        context.deleteObject(group)
-        return saveCoreDataChanges()
-    }
-    
-    func fetchGroupWithObjectId(objectId: String) -> ZSSGroup? {
-        if let groups = privateGroups {
-            for group in groups {
-                if group.objectId == objectId: return group
-            }
-        }
-    }
-    
-    func createUser() -> ZSSUser? {
-        if !userExists() {
-            var user : ZSSUser = NSEntityDescription.insertNewObjectForEntityForName("ZSSUser", inManagedObjectContext: context) as ZSSUser
-            privateUser = user
-            return user
-        } else {
-            let userAlreadyExistsException = NSException(name: "UserAlreadyExistsException", reason: "A user has already been created for the current session. To create another user, the current one must first be deleted or signed out.", userInfo: nil)
-            userAlreadyExistsException.raise()
-        }
-    }
-    
-    func createGroup() -> ZSSGroup? {
-        var group : ZSSGroup = NSEntityDescription.insertNewObjectForEntityForName("ZSSGroup", inManagedObjectContext: context) as ZSSGroup
-        privateGroups!.append(group)
-        return group
-    }
-    
-    func userExists() -> Bool {
-        if let user = privateUser {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    func configureCoreData() -> Void {
+    private func configureCoreData() -> Void {
         model = NSManagedObjectModel.mergedModelFromBundles(nil)
         let psc : NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: model)
         let path = itemArchivePath()
@@ -133,13 +137,13 @@ class ZSSLocalStore: NSObject {
         loadAllItems()
     }
     
-    func itemArchivePath() -> String {
+    private func itemArchivePath() -> String {
         let documentDirectories = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let documentDirectory = documentDirectories[0] as String
         return documentDirectory.stringByAppendingString("store.data")
     }
     
-    func loadAllItems() -> Void {
+    private func loadAllItems() -> Void {
         if (privateUser == nil) {
             let request = NSFetchRequest()
             let e = NSEntityDescription.entityForName("ZSSUser", inManagedObjectContext: context)
