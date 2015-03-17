@@ -13,6 +13,7 @@ class ZSSGroup: NSManagedObject {
 
     @NSManaged var name: String
     @NSManaged var code: String
+    @NSManaged var objectId: String
     @NSManaged var profilePicture: AnyObject
     @NSManaged var followerCount: NSNumber
     @NSManaged var isPublic: NSNumber

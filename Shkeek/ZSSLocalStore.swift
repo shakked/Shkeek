@@ -28,11 +28,79 @@ class ZSSLocalStore: NSObject {
     }
     
     func groups() -> [ZSSGroup]? {
-        return privateGroups
+        if (privateGroups == nil) {
+            return []
+        } else {
+            return privateGroups
+        }
     }
     
     func user() -> ZSSUser? {
         return privateUser
+    }
+    
+    func saveCoreDataChanges() -> Bool {
+        var error : NSError?
+        let successful = context.save(&error)
+        if (!successful) {
+            println("Error saving \(error!.localizedDescription)")
+        }
+        return successful
+    }
+    
+    func deleteAllObjects() -> Void {
+        for group in privateGroups! {
+            context.deleteObject(group)
+        }
+        
+        if let user = privateUser {
+            context.deleteObject(user)
+        }
+    }
+    
+    func deleteUser() -> Bool {
+        if let user = privateUser {
+            context.deleteObject(user)
+        }
+        return saveCoreDataChanges()
+    }
+    
+    func deleteGroup(group: ZSSGroup) -> Bool {
+        context.deleteObject(group)
+        return saveCoreDataChanges()
+    }
+    
+    func fetchGroupWithObjectId(objectId: String) -> ZSSGroup? {
+        if let groups = privateGroups {
+            for group in groups {
+                if group.objectId == objectId: return group
+            }
+        }
+    }
+    
+    func createUser() -> ZSSUser? {
+        if !userExists() {
+            var user : ZSSUser = NSEntityDescription.insertNewObjectForEntityForName("ZSSUser", inManagedObjectContext: context) as ZSSUser
+            privateUser = user
+            return user
+        } else {
+            let userAlreadyExistsException = NSException(name: "UserAlreadyExistsException", reason: "A user has already been created for the current session. To create another user, the current one must first be deleted or signed out.", userInfo: nil)
+            userAlreadyExistsException.raise()
+        }
+    }
+    
+    func createGroup() -> ZSSGroup? {
+        var group : ZSSGroup = NSEntityDescription.insertNewObjectForEntityForName("ZSSGroup", inManagedObjectContext: context) as ZSSGroup
+        privateGroups!.append(group)
+        return group
+    }
+    
+    func userExists() -> Bool {
+        if let user = privateUser {
+            return true
+        } else {
+            return false
+        }
     }
     
     func configureCoreData() -> Void {

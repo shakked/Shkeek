@@ -8,6 +8,7 @@
         <attribute name="isPrivate" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isPublic" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profilePicture" optional="YES" attributeType="Transformable" syncable="YES"/>
         <relationship name="admins" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSUser" inverseName="adminsOf" inverseEntity="ZSSUser" syncable="YES"/>
     </entity>
@@ -21,7 +22,7 @@
         <relationship name="adminsOf" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSGroup" inverseName="admins" inverseEntity="ZSSGroup" syncable="YES"/>
     </entity>
     <elements>
+        <element name="ZSSGroup" positionX="-54" positionY="36" width="128" height="195"/>
         <element name="ZSSUser" positionX="-63" positionY="-18" width="128" height="148"/>
-        <element name="ZSSGroup" positionX="-54" positionY="36" width="128" height="178"/>
     </elements>
 </model>
