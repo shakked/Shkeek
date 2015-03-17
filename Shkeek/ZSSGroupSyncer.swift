@@ -7,7 +7,22 @@
 //
 
 import UIKit
+import Parse
 
 class ZSSGroupSyncer: NSObject {
-   
+    class var sharedQuerier: ZSSGroupSyncer {
+        struct Static {
+            static let instance: ZSSGroupSyncer = ZSSGroupSyncer()
+        }
+        return Static.instance
+    }
+    
+    func syncGroups(cloudGroups: [PFObject], completion:((error: NSError?) -> Void)) {
+        
+    }
+    
+    private func getGroupIds() -> [NSString] {
+     
+        return []
+    }
 }

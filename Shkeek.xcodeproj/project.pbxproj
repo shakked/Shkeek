@@ -23,6 +23,12 @@
 		4A6924C81AB734010019487A /* ZSSAnnouncementQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6924C61AB734010019487A /* ZSSAnnouncementQuerier.swift */; };
 		4A7C60401AB74A5600DA34B1 /* ZSSLoginQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C603F1AB74A5600DA34B1 /* ZSSLoginQuerier.swift */; };
 		4A7C60411AB74A5600DA34B1 /* ZSSLoginQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C603F1AB74A5600DA34B1 /* ZSSLoginQuerier.swift */; };
+		4A7C60431AB7A15100DA34B1 /* ZSSGroupSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60421AB7A15100DA34B1 /* ZSSGroupSyncer.swift */; };
+		4A7C60441AB7A15100DA34B1 /* ZSSGroupSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60421AB7A15100DA34B1 /* ZSSGroupSyncer.swift */; };
+		4A7C60461AB7A23100DA34B1 /* ZSSLocalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */; };
+		4A7C60471AB7A23100DA34B1 /* ZSSLocalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */; };
+		4A7C60491AB7A23800DA34B1 /* ZSSLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60481AB7A23800DA34B1 /* ZSSLocalStore.swift */; };
+		4A7C604A1AB7A23800DA34B1 /* ZSSLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60481AB7A23800DA34B1 /* ZSSLocalStore.swift */; };
 		7D808C7060384B26A93FBCB3 /* libPods-Shkeek.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C84BA62B13AC54C8E5A4C0 /* libPods-Shkeek.a */; };
 		D6D8B4F6A49043D778EDE599 /* libPods-ShkeekTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1363611A5C07FAC38A5BD312 /* libPods-ShkeekTests.a */; };
 /* End PBXBuildFile section */
@@ -57,6 +63,9 @@
 		4A6924C31AB733F50019487A /* ZSSGroupQuerier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSGroupQuerier.swift; sourceTree = "<group>"; };
 		4A6924C61AB734010019487A /* ZSSAnnouncementQuerier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSAnnouncementQuerier.swift; sourceTree = "<group>"; };
 		4A7C603F1AB74A5600DA34B1 /* ZSSLoginQuerier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLoginQuerier.swift; sourceTree = "<group>"; };
+		4A7C60421AB7A15100DA34B1 /* ZSSGroupSyncer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSGroupSyncer.swift; sourceTree = "<group>"; };
+		4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLocalFactory.swift; sourceTree = "<group>"; };
+		4A7C60481AB7A23800DA34B1 /* ZSSLocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLocalStore.swift; sourceTree = "<group>"; };
 		8D1DF9FFD5BD9FD5FECF18FC /* Pods-Shkeek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shkeek.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shkeek/Pods-Shkeek.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +116,9 @@
 				4A6924C01AB733800019487A /* ZSSGroup.swift */,
 				4A6924C31AB733F50019487A /* ZSSGroupQuerier.swift */,
 				4A7C603F1AB74A5600DA34B1 /* ZSSLoginQuerier.swift */,
+				4A7C60421AB7A15100DA34B1 /* ZSSGroupSyncer.swift */,
+				4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */,
+				4A7C60481AB7A23800DA34B1 /* ZSSLocalStore.swift */,
 				4A6924C61AB734010019487A /* ZSSAnnouncementQuerier.swift */,
 				4A6924BD1AB7337F0019487A /* ZSSUser.swift */,
 				4A613FD11AB7268F00D0F331 /* AppDelegate.swift */,
@@ -328,8 +340,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A7C60461AB7A23100DA34B1 /* ZSSLocalFactory.swift in Sources */,
+				4A7C60431AB7A15100DA34B1 /* ZSSGroupSyncer.swift in Sources */,
 				4A6924BE1AB7337F0019487A /* ZSSUser.swift in Sources */,
 				4A6924C41AB733F50019487A /* ZSSGroupQuerier.swift in Sources */,
+				4A7C60491AB7A23800DA34B1 /* ZSSLocalStore.swift in Sources */,
 				4A613FD21AB7268F00D0F331 /* AppDelegate.swift in Sources */,
 				4A7C60401AB74A5600DA34B1 /* ZSSLoginQuerier.swift in Sources */,
 				4A6924C11AB733800019487A /* ZSSGroup.swift in Sources */,
@@ -342,8 +357,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A7C60471AB7A23100DA34B1 /* ZSSLocalFactory.swift in Sources */,
+				4A7C60441AB7A15100DA34B1 /* ZSSGroupSyncer.swift in Sources */,
 				4A6924BF1AB7337F0019487A /* ZSSUser.swift in Sources */,
 				4A6924C51AB733F50019487A /* ZSSGroupQuerier.swift in Sources */,
+				4A7C604A1AB7A23800DA34B1 /* ZSSLocalStore.swift in Sources */,
 				4A613FE81AB7268F00D0F331 /* ShkeekTests.swift in Sources */,
 				4A7C60411AB74A5600DA34B1 /* ZSSLoginQuerier.swift in Sources */,
 				4A6924C21AB733800019487A /* ZSSGroup.swift in Sources */,

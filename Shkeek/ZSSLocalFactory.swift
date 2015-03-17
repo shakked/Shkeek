@@ -9,5 +9,15 @@
 import UIKit
 
 class ZSSLocalFactory: NSObject {
-   
+    
+    func createGroup() -> ZSSGroup? {
+        return nil
+    }
+    
+    func createUser() -> ZSSUser? {
+        //watch out for multiple users, logging out should delete user
+        return nil
+    }
+    
 }
+

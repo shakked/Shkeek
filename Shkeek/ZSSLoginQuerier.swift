@@ -18,13 +18,21 @@ class ZSSLoginQuerier: NSObject {
         return Static.instance
     }
     
-    func logInUserThroughFacebookWithCompletion(completion: ((user: PFUser?, error: NSError?) -> Void)) {
+    func logInUserThroughFacebookW(completion: ((user: PFUser?, error: NSError?) -> Void)) {
         let permissions = ["email"]
 
     }
 
-    func logInUserThroughTwitterWithCompletion(completion: ((user: PFUser?, error: NSError?) -> Void)) {
+    func logInUserThroughTwitter(completion: ((user: PFUser?, error: NSError?) -> Void)) {
         
     }
     
+    func configureFacebookLinkedUser(completion:((user: PFUser, error: NSError?) -> Void)) {
+        
+    }
+    
+    func configureTwitterLinkedUser(completion:((user: PFUser, error: NSError?) -> Void)) {
+        
+    }
+
 }

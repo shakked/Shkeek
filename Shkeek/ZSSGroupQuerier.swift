@@ -18,10 +18,18 @@ class ZSSGroupQuerier: NSObject {
         return Static.instance
     }
     
-    func findCurrentUserGroupsInBackgroundWithCompletion(completion: ((error: NSError?, groups:[ZSSGroup]) -> Void)) {
+    func findCurrentUserGroups(completion: ((error: NSError?, groups:[ZSSGroup]) -> Void)) {
         completion(error: nil, groups: [])
     }
+    
+    func saveLocalGroup(localGroup: ZSSGroup, completion: ((error: NSError?, succeeded: Bool) -> Void)) {
+        
+        //AFNetworking PUT (save network calls)
+        completion(error: nil, succeeded: true)
+    }
 
+    
+    
     
     
     
