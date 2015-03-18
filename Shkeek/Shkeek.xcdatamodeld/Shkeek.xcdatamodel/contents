@@ -5,6 +5,7 @@
         <attribute name="followerCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="isBanned" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isHidden" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isPremium" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isPrivate" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isPublic" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,7 +21,7 @@
         <attribute name="reportedCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
+        <element name="ZSSGroup" positionX="-54" positionY="36" width="128" height="195"/>
         <element name="ZSSUser" positionX="-63" positionY="-18" width="128" height="135"/>
-        <element name="ZSSGroup" positionX="-54" positionY="36" width="128" height="180"/>
     </elements>
 </model>

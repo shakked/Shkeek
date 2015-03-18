@@ -45,11 +45,45 @@ class testZSSLocalStore: XCTestCase {
         XCTAssert(retrievedUser.valueForKey("objectId")!.isEqual("objectId"))
         XCTAssert(retrievedUser.valueForKey("isBanned")!.isEqual(NSNumber(bool: true)))
         XCTAssert(retrievedUser.valueForKey("isEmailConfirmed")!.isEqual(NSNumber(bool: true)))
-        
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
+    func testCreatGroup() {
+        let group = ZSSLocalStore.sharedQuerier.createGroup()?
+        XCTAssertNotNil(group)
+        
+        group?.setValue("testCode", forKey: "code")
+        group?.setValue(NSNumber(int: 3000), forKey: "followerCount")
+        group?.setValue(NSNumber(bool: true), forKey: "isBanned")
+        group?.setValue(NSNumber(bool: true), forKey: "isHidden")
+        group?.setValue(NSNumber(bool: true), forKey: "isPrivate")
+        group?.setValue(NSNumber(bool: true), forKey: "isPublic")
+        group?.setValue(NSNumber(bool: true), forKey: "isPremium")
+        group?.setValue("testGroupName", forKey: "name")
+        group?.setValue("testObjectId", forKey: "objectId")
+        
+        let retrievedGroup : NSManagedObject = ZSSLocalStore.sharedQuerier.fetchGroupWithObjectId(objectId: "testObjectId")! as NSManagedObject
+        XCTAssert(retrievedGroup.valueForKey("code")!.isEqual("testCode"))
+        XCTAssert(retrievedGroup.valueForKey("followerCount")!.isEqual(NSNumber(int: 3000)))
+        XCTAssert(retrievedGroup.valueForKey("isBanned")!.isEqual(NSNumber(bool: true)))
+        XCTAssert(retrievedGroup.valueForKey("isHidden")!.isEqual(NSNumber(bool: true)))
+        XCTAssert(retrievedGroup.valueForKey("isPrivate")!.isEqual(NSNumber(bool: true)))
+        XCTAssert(retrievedGroup.valueForKey("isPublic")!.isEqual(NSNumber(bool: true)))
+        XCTAssert(retrievedGroup.valueForKey("isPremium")!.isEqual(NSNumber(bool: true)))
+        XCTAssert(retrievedGroup.valueForKey("name")!.isEqual("testGroupName"))
+        XCTAssert(retrievedGroup.valueForKey("objectId")!.isEqual("testObjectId"))
+        
+        let groupCountBeforeDelete : Int = ZSSLocalStore.sharedQuerier.groups()!.count
+        
+        ZSSLocalStore.sharedQuerier.deleteGroup(group: retrievedGroup)
+        var groupCountAfterDelete : Int = ZSSLocalStore.sharedQuerier.groups()!.count
+        
+        XCTAssertEqual(groupCountBeforeDelete, groupCountAfterDelete + 1)
+        
+    }
+
+        func testExample() {
+
+            
         XCTAssert(true, "Pass")
     }
 
