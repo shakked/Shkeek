@@ -4,10 +4,12 @@
 target 'Shkeek' do
 pod 'Parse'
 pod 'Facebook-iOS-SDK'
+pod 'ParseFacebookUtils'
 end
 
 target 'ShkeekTests' do
 pod 'Parse'
 pod 'Facebook-iOS-SDK'
+pod 'ParseFacebookUtils'
 end
 

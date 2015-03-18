@@ -16,8 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.backgroundColor = UIColor.whiteColor()
         
-        ZSSLocalStore.sharedQuerier.createUser()
+        let lvc : ZSSLoginViewController = ZSSLoginViewController()
+        window?.rootViewController = lvc
+        window?.makeKeyAndVisible()
         
         return true
     }
@@ -106,6 +110,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    func configureParse () -> Void {
+        
+        
+        NSString *keyPath = [[NSBundle mainBundle] pathForResource:@"Keys" ofType:@"plist"];
+        NSDictionary *keyDict = [NSDictionary dictionaryWithContentsOfFile:keyPath];
+        NSString *parseApplicationId = keyDict[@"ParseApplicationID"];
+        NSString *parseClientKey = keyDict[@"ParseClientKey"];
+        [Parse setApplicationId:parseApplicationId
+        clientKey:parseClientKey];
+        [PFFacebookUtils initializeFacebook];
+        [PFTwitterUtils initializeWithConsumerKey:@"Iv6gM5QxuXV6TYddNjHJMLYLw"
+        consumerSecret:@"C8twO0ik7o5pfHy5HGa5UA60qMsq3bNlZsKdmOwVVWqkQccqXp"];
+    }
 
 
 }

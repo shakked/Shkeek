@@ -38,13 +38,15 @@ class testZSSLocalStore: XCTestCase {
         user.setValue(NSNumber(bool: true), forKey: "isBanned")
         user.setValue(NSNumber(bool: true), forKey: "isEmailConfirmed")
 
-        
         let retrievedUser = ZSSLocalStore.sharedQuerier.user()!
         XCTAssert(retrievedUser.valueForKey("email")!.isEqual("test@test.com"))
         XCTAssert(retrievedUser.valueForKey("reportedCount")!.isEqual(NSNumber(int: 30)))
         XCTAssert(retrievedUser.valueForKey("objectId")!.isEqual("objectId"))
         XCTAssert(retrievedUser.valueForKey("isBanned")!.isEqual(NSNumber(bool: true)))
         XCTAssert(retrievedUser.valueForKey("isEmailConfirmed")!.isEqual(NSNumber(bool: true)))
+        
+        ZSSLocalStore.sharedQuerier.deleteUser()
+        XCTAssertNil(ZSSLocalStore.sharedQuerier.user(), "Deleted user should be nil")
     }
     
     func testCreatGroup() {
@@ -79,12 +81,6 @@ class testZSSLocalStore: XCTestCase {
         
         XCTAssertEqual(groupCountBeforeDelete, groupCountAfterDelete + 1)
         
-    }
-
-        func testExample() {
-
-            
-        XCTAssert(true, "Pass")
     }
 
 }

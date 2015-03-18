@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A1E443E1AB9FBA3002C167B /* ZSSProfilePicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E443C1AB9FBA3002C167B /* ZSSProfilePicCell.swift */; };
+		4A1E443F1AB9FBA3002C167B /* ZSSProfilePicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A1E443D1AB9FBA3002C167B /* ZSSProfilePicCell.xib */; };
+		4A1E44421AB9FFFB002C167B /* ZSSTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E44401AB9FFFB002C167B /* ZSSTextFieldCell.swift */; };
+		4A1E44431AB9FFFB002C167B /* ZSSTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A1E44411AB9FFFB002C167B /* ZSSTextFieldCell.xib */; };
+		4A1E44451ABA039B002C167B /* UIColor+FlatColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E44441ABA039B002C167B /* UIColor+FlatColors.swift */; };
+		4A20C3C81AB9CCC400AC6338 /* ZSSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20C3C61AB9CCC400AC6338 /* ZSSLoginViewController.swift */; };
+		4A20C3C91AB9CCC400AC6338 /* ZSSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A20C3C71AB9CCC400AC6338 /* ZSSLoginViewController.xib */; };
 		4A613FD21AB7268F00D0F331 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A613FD11AB7268F00D0F331 /* AppDelegate.swift */; };
 		4A613FD91AB7268F00D0F331 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A613FD81AB7268F00D0F331 /* Images.xcassets */; };
 		4A613FDC1AB7268F00D0F331 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A613FDA1AB7268F00D0F331 /* LaunchScreen.xib */; };
@@ -21,6 +28,7 @@
 		4A7C60461AB7A23100DA34B1 /* ZSSLocalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */; };
 		4A7C60491AB7A23800DA34B1 /* ZSSLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60481AB7A23800DA34B1 /* ZSSLocalStore.swift */; };
 		4AB7738B1AB87DA800D33B9A /* testZSSLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7738A1AB87DA800D33B9A /* testZSSLocalStore.swift */; };
+		4ABC4E201AB9D25700CDAB59 /* ZSSSignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC4E1F1AB9D25700CDAB59 /* ZSSSignUpTableViewController.swift */; };
 		4AC9152D1AB93A0A00D48150 /* Shkeek.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9152B1AB93A0A00D48150 /* Shkeek.xcdatamodeld */; };
 		4AC9152E1AB93A0A00D48150 /* Shkeek.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9152B1AB93A0A00D48150 /* Shkeek.xcdatamodeld */; };
 		4AC915301AB9466600D48150 /* Array+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9152F1AB9466600D48150 /* Array+Convenience.swift */; };
@@ -45,6 +53,13 @@
 		20E57EF6B85CFBF016A414D6 /* Pods-Shkeek.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shkeek.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shkeek/Pods-Shkeek.release.xcconfig"; sourceTree = "<group>"; };
 		28C84BA62B13AC54C8E5A4C0 /* libPods-Shkeek.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Shkeek.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		372AFFF7D46687D2D0D1E62F /* Pods-ShkeekTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShkeekTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShkeekTests/Pods-ShkeekTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A1E443C1AB9FBA3002C167B /* ZSSProfilePicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSProfilePicCell.swift; sourceTree = "<group>"; };
+		4A1E443D1AB9FBA3002C167B /* ZSSProfilePicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSProfilePicCell.xib; sourceTree = "<group>"; };
+		4A1E44401AB9FFFB002C167B /* ZSSTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSTextFieldCell.swift; sourceTree = "<group>"; };
+		4A1E44411AB9FFFB002C167B /* ZSSTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSTextFieldCell.xib; sourceTree = "<group>"; };
+		4A1E44441ABA039B002C167B /* UIColor+FlatColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+FlatColors.swift"; path = "../Shkeek/UIColor+FlatColors.swift"; sourceTree = "<group>"; };
+		4A20C3C61AB9CCC400AC6338 /* ZSSLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLoginViewController.swift; sourceTree = "<group>"; };
+		4A20C3C71AB9CCC400AC6338 /* ZSSLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSLoginViewController.xib; sourceTree = "<group>"; };
 		4A613FCC1AB7268F00D0F331 /* Shkeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shkeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A613FD01AB7268F00D0F331 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A613FD11AB7268F00D0F331 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +74,7 @@
 		4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLocalFactory.swift; sourceTree = "<group>"; };
 		4A7C60481AB7A23800DA34B1 /* ZSSLocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLocalStore.swift; sourceTree = "<group>"; };
 		4AB7738A1AB87DA800D33B9A /* testZSSLocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testZSSLocalStore.swift; sourceTree = "<group>"; };
+		4ABC4E1F1AB9D25700CDAB59 /* ZSSSignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSSignUpTableViewController.swift; sourceTree = "<group>"; };
 		4AC915281AB92EA400D48150 /* Shkeek-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Shkeek-Bridging-Header.h"; sourceTree = "<group>"; };
 		4AC915291AB92F4D00D48150 /* ShkeekTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShkeekTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		4AC9152C1AB93A0A00D48150 /* Shkeek.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shkeek.xcdatamodel; sourceTree = "<group>"; };
@@ -86,6 +102,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A1E44461ABA09E3002C167B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4A1E443C1AB9FBA3002C167B /* ZSSProfilePicCell.swift */,
+				4A1E443D1AB9FBA3002C167B /* ZSSProfilePicCell.xib */,
+				4A1E44401AB9FFFB002C167B /* ZSSTextFieldCell.swift */,
+				4A1E44411AB9FFFB002C167B /* ZSSTextFieldCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		4A20C3C51AB9CCA900AC6338 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4AC9152B1AB93A0A00D48150 /* Shkeek.xcdatamodeld */,
+				4A6924C31AB733F50019487A /* ZSSGroupQuerier.swift */,
+				4A7C603F1AB74A5600DA34B1 /* ZSSLoginQuerier.swift */,
+				4A7C60421AB7A15100DA34B1 /* ZSSGroupSyncer.swift */,
+				4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */,
+				4A7C60481AB7A23800DA34B1 /* ZSSLocalStore.swift */,
+				4A6924C61AB734010019487A /* ZSSAnnouncementQuerier.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4A20C3CA1AB9CCEB00AC6338 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4A20C3C61AB9CCC400AC6338 /* ZSSLoginViewController.swift */,
+				4A20C3C71AB9CCC400AC6338 /* ZSSLoginViewController.xib */,
+				4ABC4E1F1AB9D25700CDAB59 /* ZSSSignUpTableViewController.swift */,
+				4A1E44461ABA09E3002C167B /* Cells */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		4A613FC31AB7268F00D0F331 = {
 			isa = PBXGroup;
 			children = (
@@ -109,15 +161,9 @@
 		4A613FCE1AB7268F00D0F331 /* Shkeek */ = {
 			isa = PBXGroup;
 			children = (
-				4AC9152B1AB93A0A00D48150 /* Shkeek.xcdatamodeld */,
-				4AC915281AB92EA400D48150 /* Shkeek-Bridging-Header.h */,
-				4A6924C31AB733F50019487A /* ZSSGroupQuerier.swift */,
-				4A7C603F1AB74A5600DA34B1 /* ZSSLoginQuerier.swift */,
-				4A7C60421AB7A15100DA34B1 /* ZSSGroupSyncer.swift */,
-				4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */,
-				4A7C60481AB7A23800DA34B1 /* ZSSLocalStore.swift */,
-				4A6924C61AB734010019487A /* ZSSAnnouncementQuerier.swift */,
 				4A613FD11AB7268F00D0F331 /* AppDelegate.swift */,
+				4A20C3C51AB9CCA900AC6338 /* Model */,
+				4A20C3CA1AB9CCEB00AC6338 /* ViewControllers */,
 				4A613FD81AB7268F00D0F331 /* Images.xcassets */,
 				4A613FDA1AB7268F00D0F331 /* LaunchScreen.xib */,
 				4A613FCF1AB7268F00D0F331 /* Supporting Files */,
@@ -128,6 +174,7 @@
 		4A613FCF1AB7268F00D0F331 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4AC915281AB92EA400D48150 /* Shkeek-Bridging-Header.h */,
 				4A613FD01AB7268F00D0F331 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -139,6 +186,7 @@
 				4A613FE51AB7268F00D0F331 /* Supporting Files */,
 				4AB7738A1AB87DA800D33B9A /* testZSSLocalStore.swift */,
 				4AC9152F1AB9466600D48150 /* Array+Convenience.swift */,
+				4A1E44441ABA039B002C167B /* UIColor+FlatColors.swift */,
 			);
 			path = ShkeekTests;
 			sourceTree = "<group>";
@@ -256,8 +304,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A20C3C91AB9CCC400AC6338 /* ZSSLoginViewController.xib in Resources */,
+				4A1E44431AB9FFFB002C167B /* ZSSTextFieldCell.xib in Resources */,
 				4A613FDC1AB7268F00D0F331 /* LaunchScreen.xib in Resources */,
 				4A613FD91AB7268F00D0F331 /* Images.xcassets in Resources */,
+				4A1E443F1AB9FBA3002C167B /* ZSSProfilePicCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,13 +389,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A1E44451ABA039B002C167B /* UIColor+FlatColors.swift in Sources */,
 				4A7C60461AB7A23100DA34B1 /* ZSSLocalFactory.swift in Sources */,
+				4A1E44421AB9FFFB002C167B /* ZSSTextFieldCell.swift in Sources */,
 				4AC9152D1AB93A0A00D48150 /* Shkeek.xcdatamodeld in Sources */,
 				4A7C60431AB7A15100DA34B1 /* ZSSGroupSyncer.swift in Sources */,
 				4A6924C41AB733F50019487A /* ZSSGroupQuerier.swift in Sources */,
 				4A7C60491AB7A23800DA34B1 /* ZSSLocalStore.swift in Sources */,
 				4A613FD21AB7268F00D0F331 /* AppDelegate.swift in Sources */,
 				4A7C60401AB74A5600DA34B1 /* ZSSLoginQuerier.swift in Sources */,
+				4A1E443E1AB9FBA3002C167B /* ZSSProfilePicCell.swift in Sources */,
+				4ABC4E201AB9D25700CDAB59 /* ZSSSignUpTableViewController.swift in Sources */,
+				4A20C3C81AB9CCC400AC6338 /* ZSSLoginViewController.swift in Sources */,
 				4A6924C71AB734010019487A /* ZSSAnnouncementQuerier.swift in Sources */,
 				4AC915301AB9466600D48150 /* Array+Convenience.swift in Sources */,
 			);
