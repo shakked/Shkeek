@@ -8,14 +8,15 @@
 import UIKit
 import CoreData
 
-class ZSSLocalStore: NSObject {
+
+public class ZSSLocalStore: NSObject {
     
-    private var context : NSManagedObjectContext!
-    private var model : NSManagedObjectModel!
-    var privateUser : ZSSUser?
-    private var privateGroups : [ZSSGroup]?
+    public var context : NSManagedObjectContext!
     
-    class var sharedQuerier: ZSSLocalStore {
+    public var privateUser : NSManagedObject?
+    private var privateGroups : [NSManagedObject]?
+    
+    public class var sharedQuerier: ZSSLocalStore {
         struct Static {
             static let instance: ZSSLocalStore = ZSSLocalStore()
         }
@@ -23,15 +24,17 @@ class ZSSLocalStore: NSObject {
     }
     
     override init() {
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        context = appDelegate.managedObjectContext
         super.init()
         configureCoreData()
     }
     
-    func user() -> ZSSUser? {
+    public func user() -> NSManagedObject? {
         return privateUser
     }
     
-    func groups() -> [ZSSGroup]? {
+    public func groups() -> [NSManagedObject]? {
         if (privateGroups == nil) {
             return []
         } else {
@@ -39,16 +42,17 @@ class ZSSLocalStore: NSObject {
         }
     }
     
-    func createGroup() -> ZSSGroup? {
-        var group : ZSSGroup = NSEntityDescription.insertNewObjectForEntityForName("ZSSGroup", inManagedObjectContext: context) as ZSSGroup
+    public func createGroup() -> NSManagedObject? {
+        
+        var group : NSManagedObject = NSEntityDescription.insertNewObjectForEntityForName("ZSSGroup", inManagedObjectContext: context) as NSManagedObject
         privateGroups!.append(group)
         return group
     }
     
-    func fetchGroupWithObjectId(#objectId: String) -> ZSSGroup? {
+    public func fetchGroupWithObjectId(#objectId: String) -> NSManagedObject? {
         if let groups = privateGroups {
             for group in groups {
-                if group.objectId == objectId {
+                if group.valueForKey("objectId")!.isEqual(objectId) {
                     return group
                 }
             }
@@ -56,14 +60,15 @@ class ZSSLocalStore: NSObject {
         return nil
     }
     
-    func deleteGroup(#group: ZSSGroup) -> Bool {
+    public func deleteGroup(#group: NSManagedObject) -> Void {
         context.deleteObject(group)
-        return saveCoreDataChanges()
+        privateGroups!.removeObject(group)
+        
     }
     
-    func createUser() -> ZSSUser? {
+    public func createUser() -> NSManagedObject? {
         if !userExists() {
-            var user : ZSSUser = NSEntityDescription.insertNewObjectForEntityForName("ZSSUser", inManagedObjectContext: context) as ZSSUser
+            var user : NSManagedObject = NSEntityDescription.insertNewObjectForEntityForName("ZSSUser", inManagedObjectContext: context) as NSManagedObject
             privateUser = user
             return user
         } else {
@@ -73,14 +78,14 @@ class ZSSLocalStore: NSObject {
         return nil
     }
     
-    func deleteUser() -> Bool {
+    public func deleteUser() -> Void {
         if let user = privateUser {
             context.deleteObject(user)
+            privateUser = nil
         }
-        return saveCoreDataChanges()
     }
     
-    func userExists() -> Bool {
+    public func userExists() -> Bool {
         if let user = privateUser {
             return true
         } else {
@@ -88,88 +93,49 @@ class ZSSLocalStore: NSObject {
         }
     }
     
-    func deleteAllObjects() -> Void {
+    public func deleteAllObjects() -> Void {
+        
         for group in privateGroups! {
             context.deleteObject(group)
+            privateGroups?.removeObject(group)
         }
         
         if let user = privateUser {
             context.deleteObject(user)
+            privateUser = nil
         }
     }
     
-    func saveCoreDataChanges() -> Bool {
-        var error : NSError?
-        let successful = context.save(&error)
-        if (!successful) {
-            println("Error saving \(error!.localizedDescription)")
-        }
-        return successful
+    func saveCoreDataChanges() -> Void {
+        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        appDelegate.saveContext()
+        
     }
     
     private func configureCoreData() -> Void {
-        model = NSManagedObjectModel.mergedModelFromBundles(nil)
-        let psc : NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: model)
-        let path = itemArchivePath()
-        let storeURL = NSURL.fileURLWithPath(path)!
-        var error : NSError?
-        context = NSManagedObjectContext()
-        context?.persistentStoreCoordinator = psc
-        
-        let options = [NSMigratePersistentStoresAutomaticallyOption : true,
-            NSInferMappingModelAutomaticallyOption : true]
-        
-        var successOfAdding : Bool = psc?.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options, error: &error) != nil
-        
-        if (!successOfAdding) {
-            let fileExistsAtLocation = NSFileManager.defaultManager().fileExistsAtPath(storeURL.path!)
-            if (fileExistsAtLocation) {
-                
-                NSFileManager.defaultManager().removeItemAtURL(storeURL, error: nil)
-                successOfAdding = psc?.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil, error: &error) != nil
-                
-                if (!successOfAdding) {
-                    println("Unresolved error.")
-                    abort()
+        if privateUser == nil {
+            var userFetch : NSFetchRequest = NSFetchRequest(entityName: "ZSSUser")
+            let results : [AnyObject]? = context.executeFetchRequest(userFetch, error: nil)
+            if let results = results {
+                if results.count >= 1 {
+                    privateUser = (results[0] as NSManagedObject)
+                } else {
+                    privateUser = nil
                 }
             }
         }
-        loadAllItems()
-    }
-    
-    private func itemArchivePath() -> String {
-        let documentDirectories = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        let documentDirectory = documentDirectories[0] as String
-        return documentDirectory.stringByAppendingString("store.data")
-    }
-    
-    private func loadAllItems() -> Void {
-        if (privateUser == nil) {
-            let request = NSFetchRequest()
-            let e = NSEntityDescription.entityForName("ZSSUser", inManagedObjectContext: context)
-            request.entity = e
-            
-            var error : NSError?
-            let results : [ZSSUser]? = context.executeFetchRequest(request, error: &error) as [ZSSUser]?
-            if (results == nil) {
-                NSException.raise("Fetch failed", format:"Error: %@", arguments:getVaList([error!]))
-            }
-            privateUser = results![0]
-        }
         
-        if (privateGroups == nil) {
-            let request = NSFetchRequest()
-            let e = NSEntityDescription.entityForName("ZSSGroup", inManagedObjectContext: context)
-            request.entity = e
-            
-            var error : NSError?
-            let results : [ZSSGroup]? = context.executeFetchRequest(request, error: &error) as [ZSSGroup]?
-            if (results == nil) {
-                NSException.raise("Fetch failed", format:"Error: %@", arguments:getVaList([error!]))
+        if privateGroups == nil {
+            var groupsFetch : NSFetchRequest = NSFetchRequest(entityName: "ZSSGroup")
+            let results : [AnyObject]? = context.executeFetchRequest(groupsFetch, error: nil)
+            if let results = results {
+                if results.count >= 1 {
+                    privateGroups = (results as [NSManagedObject])
+                } else {
+                    privateGroups = []
+                }
             }
-            privateGroups = results!
         }
-        
     }
     
     

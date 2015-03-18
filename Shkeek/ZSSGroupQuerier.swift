@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Parse
+import CoreData
 
 class ZSSGroupQuerier: NSObject {
     
@@ -18,11 +18,11 @@ class ZSSGroupQuerier: NSObject {
         return Static.instance
     }
     
-    func findCurrentUserGroups(completion: ((error: NSError?, groups:[ZSSGroup]) -> Void)) {
+    func findCurrentUserGroups(completion: ((error: NSError?, groups:[NSManagedObject]) -> Void)) {
         completion(error: nil, groups: [])
     }
     
-    func saveLocalGroup(localGroup: ZSSGroup, completion: ((error: NSError?, succeeded: Bool) -> Void)) {
+    func saveLocalGroup(localGroup: NSManagedObject, completion: ((error: NSError?, succeeded: Bool) -> Void)) {
         
         //AFNetworking PUT (save network calls)
         completion(error: nil, succeeded: true)

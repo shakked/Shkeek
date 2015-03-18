@@ -7,16 +7,16 @@
 //
 
 import UIKit
+import CoreData
 
 class ZSSLocalFactory: NSObject {
     
-    func createGroup() -> ZSSGroup? {
-        return nil
+    func createUser() -> NSManagedObject? {
+        return ZSSLocalStore.sharedQuerier.createUser()
     }
     
-    func createUser() -> ZSSUser? {
-        //watch out for multiple users, logging out should delete user
-        return nil
+    func createGroup() -> NSManagedObject? {
+        return ZSSLocalStore.sharedQuerier.createGroup()
     }
     
 }
