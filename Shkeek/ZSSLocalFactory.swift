@@ -11,6 +11,13 @@ import CoreData
 
 class ZSSLocalFactory: NSObject {
     
+    class var sharedFactory: ZSSLocalFactory {
+        struct Static {
+            static let instance: ZSSLocalFactory = ZSSLocalFactory()
+        }
+        return Static.instance
+    }
+    
     func createUser() -> NSManagedObject? {
         return ZSSLocalStore.sharedQuerier.createUser()
     }

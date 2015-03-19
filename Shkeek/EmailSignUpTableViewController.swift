@@ -53,6 +53,9 @@ class EmailSignUpTableViewController : UITableViewController {
                 cell.fieldLabel?.text = "Last Name"
             case 3:
                 cell.fieldLabel?.text = "Email"
+            case 4:
+                cell.fieldLabel?.text = "Password"
+                cell.textField.secureTextEntry = true
             default:
                 break
             }

@@ -10,7 +10,9 @@
 		4A0146B41ABA4026007DDE52 /* TwitterSignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0146B31ABA4026007DDE52 /* TwitterSignUpTableViewController.swift */; };
 		4A0146B61ABA4042007DDE52 /* EmailSignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0146B51ABA4042007DDE52 /* EmailSignUpTableViewController.swift */; };
 		4A0146B81ABA4AF9007DDE52 /* ZSSLocalQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0146B71ABA4AF9007DDE52 /* ZSSLocalQuerier.swift */; };
-		4A0146B91ABA4AF9007DDE52 /* ZSSLocalQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0146B71ABA4AF9007DDE52 /* ZSSLocalQuerier.swift */; };
+		4A1376371ABB6C370014A8A7 /* ZSSEULAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1376351ABB6C370014A8A7 /* ZSSEULAViewController.swift */; };
+		4A1376381ABB6C370014A8A7 /* ZSSEULAViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A1376361ABB6C370014A8A7 /* ZSSEULAViewController.xib */; };
+		4A13763D1ABB78740014A8A7 /* String+EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A13763B1ABB781B0014A8A7 /* String+EmailValidator.swift */; };
 		4A1E443E1AB9FBA3002C167B /* ZSSProfilePicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E443C1AB9FBA3002C167B /* ZSSProfilePicCell.swift */; };
 		4A1E443F1AB9FBA3002C167B /* ZSSProfilePicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A1E443D1AB9FBA3002C167B /* ZSSProfilePicCell.xib */; };
 		4A1E44421AB9FFFB002C167B /* ZSSTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E44401AB9FFFB002C167B /* ZSSTextFieldCell.swift */; };
@@ -34,11 +36,14 @@
 		4A7C60461AB7A23100DA34B1 /* ZSSLocalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */; };
 		4A7C60491AB7A23800DA34B1 /* ZSSLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60481AB7A23800DA34B1 /* ZSSLocalStore.swift */; };
 		4AB7738B1AB87DA800D33B9A /* testZSSLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7738A1AB87DA800D33B9A /* testZSSLocalStore.swift */; };
-		4ABC4E201AB9D25700CDAB59 /* ZSSSignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABC4E1F1AB9D25700CDAB59 /* ZSSSignUpTableViewController.swift */; };
 		4AC9152D1AB93A0A00D48150 /* Shkeek.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9152B1AB93A0A00D48150 /* Shkeek.xcdatamodeld */; };
 		4AC9152E1AB93A0A00D48150 /* Shkeek.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9152B1AB93A0A00D48150 /* Shkeek.xcdatamodeld */; };
 		4AC915301AB9466600D48150 /* Array+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9152F1AB9466600D48150 /* Array+Convenience.swift */; };
 		4AC915311AB9466600D48150 /* Array+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9152F1AB9466600D48150 /* Array+Convenience.swift */; };
+		4AD730561ABA4EB500A9F32B /* EmailLoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD730551ABA4EB500A9F32B /* EmailLoginTableViewController.swift */; };
+		4AD7305A1ABA606300A9F32B /* ZSSButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD730581ABA606300A9F32B /* ZSSButtonCell.swift */; };
+		4AD7305B1ABA606300A9F32B /* ZSSButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AD730591ABA606300A9F32B /* ZSSButtonCell.xib */; };
+		4AD7305D1ABB5EE400A9F32B /* ZSSUserSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD7305C1ABB5EE400A9F32B /* ZSSUserSyncer.swift */; };
 		7D808C7060384B26A93FBCB3 /* libPods-Shkeek.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C84BA62B13AC54C8E5A4C0 /* libPods-Shkeek.a */; };
 		D6D8B4F6A49043D778EDE599 /* libPods-ShkeekTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1363611A5C07FAC38A5BD312 /* libPods-ShkeekTests.a */; };
 /* End PBXBuildFile section */
@@ -62,6 +67,9 @@
 		4A0146B31ABA4026007DDE52 /* TwitterSignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterSignUpTableViewController.swift; sourceTree = "<group>"; };
 		4A0146B51ABA4042007DDE52 /* EmailSignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignUpTableViewController.swift; sourceTree = "<group>"; };
 		4A0146B71ABA4AF9007DDE52 /* ZSSLocalQuerier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLocalQuerier.swift; sourceTree = "<group>"; };
+		4A1376351ABB6C370014A8A7 /* ZSSEULAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSEULAViewController.swift; sourceTree = "<group>"; };
+		4A1376361ABB6C370014A8A7 /* ZSSEULAViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSEULAViewController.xib; sourceTree = "<group>"; };
+		4A13763B1ABB781B0014A8A7 /* String+EmailValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+EmailValidator.swift"; sourceTree = "<group>"; };
 		4A1E443C1AB9FBA3002C167B /* ZSSProfilePicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSProfilePicCell.swift; sourceTree = "<group>"; };
 		4A1E443D1AB9FBA3002C167B /* ZSSProfilePicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSProfilePicCell.xib; sourceTree = "<group>"; };
 		4A1E44401AB9FFFB002C167B /* ZSSTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSTextFieldCell.swift; sourceTree = "<group>"; };
@@ -84,11 +92,14 @@
 		4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLocalFactory.swift; sourceTree = "<group>"; };
 		4A7C60481AB7A23800DA34B1 /* ZSSLocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLocalStore.swift; sourceTree = "<group>"; };
 		4AB7738A1AB87DA800D33B9A /* testZSSLocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testZSSLocalStore.swift; sourceTree = "<group>"; };
-		4ABC4E1F1AB9D25700CDAB59 /* ZSSSignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSSignUpTableViewController.swift; sourceTree = "<group>"; };
 		4AC915281AB92EA400D48150 /* Shkeek-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Shkeek-Bridging-Header.h"; sourceTree = "<group>"; };
 		4AC915291AB92F4D00D48150 /* ShkeekTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShkeekTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		4AC9152C1AB93A0A00D48150 /* Shkeek.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shkeek.xcdatamodel; sourceTree = "<group>"; };
 		4AC9152F1AB9466600D48150 /* Array+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Array+Convenience.swift"; path = "Shkeek/Array+Convenience.swift"; sourceTree = SOURCE_ROOT; };
+		4AD730551ABA4EB500A9F32B /* EmailLoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLoginTableViewController.swift; sourceTree = "<group>"; };
+		4AD730581ABA606300A9F32B /* ZSSButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSButtonCell.swift; sourceTree = "<group>"; };
+		4AD730591ABA606300A9F32B /* ZSSButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSButtonCell.xib; sourceTree = "<group>"; };
+		4AD7305C1ABB5EE400A9F32B /* ZSSUserSyncer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSUserSyncer.swift; sourceTree = "<group>"; };
 		8D1DF9FFD5BD9FD5FECF18FC /* Pods-Shkeek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shkeek.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shkeek/Pods-Shkeek.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +130,8 @@
 				4A1E443D1AB9FBA3002C167B /* ZSSProfilePicCell.xib */,
 				4A1E44401AB9FFFB002C167B /* ZSSTextFieldCell.swift */,
 				4A1E44411AB9FFFB002C167B /* ZSSTextFieldCell.xib */,
+				4AD730581ABA606300A9F32B /* ZSSButtonCell.swift */,
+				4AD730591ABA606300A9F32B /* ZSSButtonCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -134,6 +147,7 @@
 				4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */,
 				4A7C60481AB7A23800DA34B1 /* ZSSLocalStore.swift */,
 				4A6924C61AB734010019487A /* ZSSAnnouncementQuerier.swift */,
+				4AD7305C1ABB5EE400A9F32B /* ZSSUserSyncer.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -143,9 +157,11 @@
 			children = (
 				4A20C3C61AB9CCC400AC6338 /* ZSSLoginViewController.swift */,
 				4A20C3C71AB9CCC400AC6338 /* ZSSLoginViewController.xib */,
-				4ABC4E1F1AB9D25700CDAB59 /* ZSSSignUpTableViewController.swift */,
-				4A0146B51ABA4042007DDE52 /* EmailSignUpTableViewController.swift */,
 				4A0146B31ABA4026007DDE52 /* TwitterSignUpTableViewController.swift */,
+				4A1376351ABB6C370014A8A7 /* ZSSEULAViewController.swift */,
+				4A1376361ABB6C370014A8A7 /* ZSSEULAViewController.xib */,
+				4A0146B51ABA4042007DDE52 /* EmailSignUpTableViewController.swift */,
+				4AD730551ABA4EB500A9F32B /* EmailLoginTableViewController.swift */,
 				4A1E44461ABA09E3002C167B /* Cells */,
 			);
 			name = ViewControllers;
@@ -199,6 +215,7 @@
 				4A613FE51AB7268F00D0F331 /* Supporting Files */,
 				4AB7738A1AB87DA800D33B9A /* testZSSLocalStore.swift */,
 				4AC9152F1AB9466600D48150 /* Array+Convenience.swift */,
+				4A13763B1ABB781B0014A8A7 /* String+EmailValidator.swift */,
 				4A1E44441ABA039B002C167B /* UIColor+FlatColors.swift */,
 			);
 			path = ShkeekTests;
@@ -318,8 +335,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A1376381ABB6C370014A8A7 /* ZSSEULAViewController.xib in Resources */,
 				4A1E44501ABA16FA002C167B /* Keys.plist in Resources */,
 				4A20C3C91AB9CCC400AC6338 /* ZSSLoginViewController.xib in Resources */,
+				4AD7305B1ABA606300A9F32B /* ZSSButtonCell.xib in Resources */,
 				4A1E44431AB9FFFB002C167B /* ZSSTextFieldCell.xib in Resources */,
 				4A613FDC1AB7268F00D0F331 /* LaunchScreen.xib in Resources */,
 				4A613FD91AB7268F00D0F331 /* Images.xcassets in Resources */,
@@ -405,19 +424,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A1376371ABB6C370014A8A7 /* ZSSEULAViewController.swift in Sources */,
 				4A1E44451ABA039B002C167B /* UIColor+FlatColors.swift in Sources */,
 				4A7C60461AB7A23100DA34B1 /* ZSSLocalFactory.swift in Sources */,
+				4AD730561ABA4EB500A9F32B /* EmailLoginTableViewController.swift in Sources */,
 				4A1E44421AB9FFFB002C167B /* ZSSTextFieldCell.swift in Sources */,
 				4AC9152D1AB93A0A00D48150 /* Shkeek.xcdatamodeld in Sources */,
 				4A0146B61ABA4042007DDE52 /* EmailSignUpTableViewController.swift in Sources */,
+				4A13763D1ABB78740014A8A7 /* String+EmailValidator.swift in Sources */,
 				4A7C60431AB7A15100DA34B1 /* ZSSGroupSyncer.swift in Sources */,
 				4A0146B41ABA4026007DDE52 /* TwitterSignUpTableViewController.swift in Sources */,
 				4A6924C41AB733F50019487A /* ZSSGroupQuerier.swift in Sources */,
 				4A7C60491AB7A23800DA34B1 /* ZSSLocalStore.swift in Sources */,
+				4AD7305A1ABA606300A9F32B /* ZSSButtonCell.swift in Sources */,
 				4A613FD21AB7268F00D0F331 /* AppDelegate.swift in Sources */,
 				4A7C60401AB74A5600DA34B1 /* ZSSLoginQuerier.swift in Sources */,
 				4A1E443E1AB9FBA3002C167B /* ZSSProfilePicCell.swift in Sources */,
-				4ABC4E201AB9D25700CDAB59 /* ZSSSignUpTableViewController.swift in Sources */,
+				4AD7305D1ABB5EE400A9F32B /* ZSSUserSyncer.swift in Sources */,
 				4A0146B81ABA4AF9007DDE52 /* ZSSLocalQuerier.swift in Sources */,
 				4A20C3C81AB9CCC400AC6338 /* ZSSLoginViewController.swift in Sources */,
 				4A6924C71AB734010019487A /* ZSSAnnouncementQuerier.swift in Sources */,
@@ -429,7 +452,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A0146B91ABA4AF9007DDE52 /* ZSSLocalQuerier.swift in Sources */,
 				4AC9152E1AB93A0A00D48150 /* Shkeek.xcdatamodeld in Sources */,
 				4A7C60441AB7A15100DA34B1 /* ZSSGroupSyncer.swift in Sources */,
 				4A6924C51AB733F50019487A /* ZSSGroupQuerier.swift in Sources */,

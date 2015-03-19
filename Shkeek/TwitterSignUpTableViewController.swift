@@ -12,10 +12,13 @@ class TwitterSignUpTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTabelView()
+    }
+    
+    func configureTabelView () -> Void {
         tableView.registerNib(UINib(nibName: "ZSSTextFieldCell", bundle: nil), forCellReuseIdentifier: "fieldCell")
         tableView.registerNib(UINib(nibName: "ZSSProfilePicCell", bundle: nil), forCellReuseIdentifier: "profileCell")
         tableView.backgroundColor? = UIColor.cloudColor()
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,23 +44,23 @@ class TwitterSignUpTableViewController: UITableViewController {
 
         if indexPath.row == 0 {
             let cell : ZSSProfilePicCell = tableView.dequeueReusableCellWithIdentifier("profileCell") as ZSSProfilePicCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
             return cell
         } else {
-            let cell : ZSSTextFieldCell? = tableView.dequeueReusableCellWithIdentifier("fieldCell", forIndexPath: indexPath) as?ZSSTextFieldCell
+            let cell : ZSSTextFieldCell = tableView.dequeueReusableCellWithIdentifier("fieldCell", forIndexPath: indexPath) as ZSSTextFieldCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
             switch indexPath.row{
             case 1:
-                cell?.fieldLabel?.text = "First Name"
+                cell.fieldLabel?.text = "First Name"
             case 2:
-                cell?.fieldLabel?.text = "Last Name"
+                cell.fieldLabel?.text = "Last Name"
             case 3:
-                cell?.fieldLabel?.text = "Email"
-            case 4:
-                cell?.fieldLabel?.text = "Password"
+                cell.fieldLabel?.text = "Email"
             default:
                 break
             }
             
-            return cell!
+            return cell
         }
     }
 

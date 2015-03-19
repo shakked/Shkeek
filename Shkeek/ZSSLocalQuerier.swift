@@ -27,4 +27,11 @@ class ZSSLocalQuerier: NSObject {
         }
     }
     
+    func currentUser() -> NSManagedObject {
+        if let user = ZSSLocalStore.sharedQuerier.user() {
+            return user
+        }
+        return ZSSLocalFactory.sharedFactory.createUser()!
+    }
+    
 }
