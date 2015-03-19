@@ -32,15 +32,25 @@ class ZSSLoginQuerier: NSObject {
     }
     
     func configureFacebookLinkedUser(completion:((succeeded: Bool, error: NSError?) -> Void)) {
-        
+        let fbRequest = FBRequest.requestForMe()
+        fbRequest.startWithCompletionHandler { (connection: FBRequestConnection!, result: AnyObject!, error: NSError!) -> Void in
+            let userInfo : Dictionary<String, AnyObject> = result as Dictionary
+            PFUser.currentUser().setValue(userInfo["first_name"], forKey: "firstName")
+            PFUser.currentUser().setValue(userInfo["last_name"], forKey: "lastName")
+            PFUser.currentUser().setValue(userInfo["email"], forKey: "email")
+            PFUser.currentUser().saveInBackgroundWithBlock({ (succeeded: Bool, error: NSError?) -> Void in
+                completion(succeeded: succeeded, error: error)
+            })
+        }
     }
     
-    func configureTwitterLinkedUser(completion:((succeeded: Bool, error: NSError?) -> Void)) {
-        let displayName : String = PFUser.currentUser().valueForKey("authData")?.valueForKey("twitter")?.valueForKey("screen_name") as String
-        PFUser.currentUser().setValue(displayName, forKey: "username")
-        PFUser.currentUser().saveInBackgroundWithBlock { (succeeded: Bool, error: NSError!) -> Void in
+    func configureTwitterLinkedUser(#userInfo: Dictionary<String, AnyObject>, completion:((succeeded: Bool, error: NSError?) -> Void)) {
+        PFUser.currentUser().setValue(userInfo["firstName"], forKey: "firstName")
+        PFUser.currentUser().setValue(userInfo["lastName"], forKey: "lastName")
+        PFUser.currentUser().setValue(userInfo["email"], forKey: "email")
+        PFUser.currentUser().saveInBackgroundWithBlock({ (succeeded: Bool, error: NSError?) -> Void in
             completion(succeeded: succeeded, error: error)
-        }
+        })
     }
 
 }

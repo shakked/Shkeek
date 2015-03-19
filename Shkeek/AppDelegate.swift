@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = lvc
         window?.makeKeyAndVisible()
         
+        configureParse()
+        
         return true
     }
 
@@ -111,17 +113,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func configureParse () -> Void {
+        let keyPath : String = NSBundle.mainBundle().pathForResource("Keys", ofType: "plist")!
+        let keyDict : NSDictionary = NSDictionary(contentsOfFile: keyPath)!
+        let parseApplicationId : String = keyDict["ParseApplicationID"] as String
+        let parseClientKey : String = keyDict["ParseClientKey"] as String
+        let twitterConsumerKey : String = keyDict["TwitterConsumerKey"] as String
+        let twitterConsumerSecret : String = keyDict["TwitterConsumerSecret"] as String
+        Parse.setApplicationId(parseApplicationId, clientKey: parseClientKey)
+        PFFacebookUtils.initializeFacebook()
+        PFTwitterUtils.initializeWithConsumerKey(twitterConsumerKey, consumerSecret: twitterConsumerSecret)
         
-        
-        NSString *keyPath = [[NSBundle mainBundle] pathForResource:@"Keys" ofType:@"plist"];
-        NSDictionary *keyDict = [NSDictionary dictionaryWithContentsOfFile:keyPath];
-        NSString *parseApplicationId = keyDict[@"ParseApplicationID"];
-        NSString *parseClientKey = keyDict[@"ParseClientKey"];
-        [Parse setApplicationId:parseApplicationId
-        clientKey:parseClientKey];
-        [PFFacebookUtils initializeFacebook];
-        [PFTwitterUtils initializeWithConsumerKey:@"Iv6gM5QxuXV6TYddNjHJMLYLw"
-        consumerSecret:@"C8twO0ik7o5pfHy5HGa5UA60qMsq3bNlZsKdmOwVVWqkQccqXp"];
     }
 
 

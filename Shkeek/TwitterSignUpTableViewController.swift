@@ -1,28 +1,26 @@
 //
-//  ZSSSignUpTableViewController.swift
-//  
+//  TwitterSignUpTableViewController.swift
+//  Shkeek
 //
 //  Created by Zachary Shakked on 3/18/15.
-//
+//  Copyright (c) 2015 Shkeek Inc. All rights reserved.
 //
 
 import UIKit
 
-class ZSSSignUpTableViewController: UITableViewController {
-    
+class TwitterSignUpTableViewController: UITableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTableview()
-    }
-
-    private func configureTableview() -> Void {
         tableView.registerNib(UINib(nibName: "ZSSTextFieldCell", bundle: nil), forCellReuseIdentifier: "fieldCell")
         tableView.registerNib(UINib(nibName: "ZSSProfilePicCell", bundle: nil), forCellReuseIdentifier: "profileCell")
         tableView.backgroundColor? = UIColor.cloudColor()
+
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -39,27 +37,27 @@ class ZSSSignUpTableViewController: UITableViewController {
         return 4
     }
 
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
         if indexPath.row == 0 {
             let cell : ZSSProfilePicCell = tableView.dequeueReusableCellWithIdentifier("profileCell") as ZSSProfilePicCell
-            cell.selectionStyle = UITableViewCellSelectionStyle.None
             return cell
         } else {
-            let cell : ZSSTextFieldCell = tableView.dequeueReusableCellWithIdentifier("fieldCell", forIndexPath: indexPath) as ZSSTextFieldCell
-            cell.selectionStyle = UITableViewCellSelectionStyle.None
+            let cell : ZSSTextFieldCell? = tableView.dequeueReusableCellWithIdentifier("fieldCell", forIndexPath: indexPath) as?ZSSTextFieldCell
             switch indexPath.row{
-                case 1:
-                    cell.fieldLabel?.text = "Email"
-                case 2:
-                    cell.fieldLabel?.text = "Username"
-                case 3:
-                    cell.fieldLabel?.text = "Password"
-                default:
-                    break
+            case 1:
+                cell?.fieldLabel?.text = "First Name"
+            case 2:
+                cell?.fieldLabel?.text = "Last Name"
+            case 3:
+                cell?.fieldLabel?.text = "Email"
+            case 4:
+                cell?.fieldLabel?.text = "Password"
+            default:
+                break
             }
             
-            return cell
+            return cell!
         }
     }
 
