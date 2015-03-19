@@ -1,28 +1,28 @@
 //
-//  ZSSSignUpTableViewController.swift
-//  
+//  EmailLoginTableViewController.swift
+//  Shkeek
 //
 //  Created by Zachary Shakked on 3/18/15.
-//
+//  Copyright (c) 2015 Shkeek Inc. All rights reserved.
 //
 
 import UIKit
 
-class ZSSSignUpTableViewController: UITableViewController {
-    
+class EmailLoginTableViewController: UITableViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTableview()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    private func configureTableview() -> Void {
-        tableView.registerNib(UINib(nibName: "ZSSTextFieldCell", bundle: nil), forCellReuseIdentifier: "fieldCell")
-        tableView.registerNib(UINib(nibName: "ZSSProfilePicCell", bundle: nil), forCellReuseIdentifier: "profileCell")
-        tableView.backgroundColor? = UIColor.cloudColor()
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -30,47 +30,25 @@ class ZSSSignUpTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 1
+        return 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 4
+        return 0
     }
 
-    
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell : ZSSProfilePicCell = tableView.dequeueReusableCellWithIdentifier("profileCell") as ZSSProfilePicCell
-            cell.selectionStyle = UITableViewCellSelectionStyle.None
-            return cell
-        } else {
-            let cell : ZSSTextFieldCell = tableView.dequeueReusableCellWithIdentifier("fieldCell", forIndexPath: indexPath) as ZSSTextFieldCell
-            cell.selectionStyle = UITableViewCellSelectionStyle.None
-            switch indexPath.row{
-                case 1:
-                    cell.fieldLabel?.text = "Email"
-                case 2:
-                    cell.fieldLabel?.text = "Username"
-                case 3:
-                    cell.fieldLabel?.text = "Password"
-                default:
-                    break
-            }
-            
-            return cell
-        }
-    }
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
 
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 170.0
-        } else {
-            return 40.0
-        }
+        // Configure the cell...
+
+        return cell
     }
-    
+    */
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
