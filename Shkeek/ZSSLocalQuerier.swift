@@ -7,7 +7,24 @@
 //
 
 import UIKit
+import CoreData
 
 class ZSSLocalQuerier: NSObject {
-   
+ 
+    class var sharedQuerier: ZSSLocalQuerier {
+        struct Static {
+            static let instance: ZSSLocalQuerier = ZSSLocalQuerier()
+        }
+        return Static.instance
+    }
+    
+    func userDidFillOutUserInfoForm() -> Bool {
+        if ZSSLocalStore.sharedQuerier.userExists() {
+            let localUser : NSManagedObject = ZSSLocalStore.sharedQuerier.user()!
+            return (localUser.valueForKey("didFillOutUserInfoForm") as NSNumber).boolValue
+        } else {
+            return false
+        }
+    }
+    
 }
