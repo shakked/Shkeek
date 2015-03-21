@@ -38,10 +38,6 @@ class ZSSLoginViewController: UIViewController {
     @IBAction func loginWithFacebookButtonPressed(sender: AnyObject) {
         ZSSLoginQuerier.sharedQuerier.logInUserThroughFacebook { (user, error) -> Void in
             if let user = user? {
-                user.setValue("facebook", forKey: "authType")
-                user.saveInBackgroundWithTarget(nil, selector: nil)
-                ZSSUserSyncer.sharedQuerier.syncLocalUserToCloudUser()
-                
                 if (self.shouldShowForm()) {
                     ZSSLoginQuerier.sharedQuerier.configureFacebookLinkedUser({ (succeeded: Bool, error: NSError?) -> Void in
                         if succeeded {
@@ -61,11 +57,8 @@ class ZSSLoginViewController: UIViewController {
     }
 
     @IBAction func loginWithTwitterButtonPressed(sender: AnyObject) {
-        ZSSLoginQuerier.sharedQuerier.logInUserThroughTwitter { (user: PFUser?, error   : NSError?) -> Void in
+        ZSSLoginQuerier.sharedQuerier.logInUserThroughTwitter { (user: PFUser?, error: NSError?) -> Void in
             if let user = user? {
-                user.setValue("twitter", forKey: "authType")
-                user.saveInBackgroundWithTarget(nil, selector: nil)
-                ZSSUserSyncer.sharedQuerier.syncLocalUserToCloudUser()
                 
                 if (self.shouldShowForm()) {
                     self.showTwitterForm()
@@ -133,7 +126,9 @@ class ZSSLoginViewController: UIViewController {
     }
     
     func showEULA() -> Void {
-        println("showing eula")
+        let evc = ZSSEulaViewController()
+        let nav = UINavigationController(rootViewController: evc)
+        presentViewController(nav, animated: true, completion: nil)
     }
     
     func showHome() -> Void {

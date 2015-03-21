@@ -24,7 +24,13 @@ class ZSSEulaViewController: UIViewController {
     @IBOutlet weak var iAgreeButton: UIButton!
 
     @IBAction func iAgreeButtonPressed(sender: AnyObject) {
-        
+        ZSSLoginQuerier.sharedQuerier.agreeToEULA { (succeeded: Bool, error: NSError?) -> Void in
+            if succeeded {
+                ZSSLocalQuerier.sharedQuerier.currentUser().setValue(NSNumber(bool: true), forKey: "didAgreeToEULA")
+            } else {
+                println("Something went wrong in agreeToEula()")
+            }
+        }
     }
 
 }
