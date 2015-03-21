@@ -109,9 +109,71 @@ class EmailLoginTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 40
     }
-
+    
     func logIn() -> Void {
-        println("trying to log in")
-        
+        ZSSLoginQuerier.sharedQuerier.logInUser(getUsernameFromCell() , password:getPasswordFromCell()) { (succeeded, error) -> Void in
+            if succeeded {
+                self.showNextView()
+            } else {
+                
+            }
+        }
+    }
+    
+    func showNextView() -> Void {
+
+        if shouldShowEULA() {
+            showEULA()
+        } else {
+            showHome()
+        }
+    }
+    
+    func shouldShowEULA() -> Bool {
+        let localUser = ZSSLocalQuerier.sharedQuerier.currentUser()
+        if let didAgreeToEULA = (localUser.valueForKey("didAgreeToEULA") as? NSNumber)?.boolValue {
+            if didAgreeToEULA {
+                println("shouldNOTShowEULA")
+                return false
+            } else {
+                println("shouldShowEULA")
+                return true
+            }
+        }
+        println("shouldShowEULA")
+        return true
+    }
+    
+    func showEULA() -> Void {
+        let evc = ZSSEulaViewController()
+        let nav = UINavigationController(rootViewController: evc)
+        presentViewController(nav, animated: true, completion: nil)
+    }
+    
+    func showHome() -> Void{
+        let hvc = ZSSHomeViewController()
+        let nav = UINavigationController(rootViewController: hvc)
+        presentViewController(nav, animated: true, completion: nil)
+    }
+    
+    
+    
+    func getUsernameFromCell() -> String {
+        return getUsernameCell().textField.text
+    }
+    
+    func getUsernameCell() -> ZSSTextFieldCell {
+        let usernameIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        return tableView.cellForRowAtIndexPath(usernameIndexPath) as ZSSTextFieldCell
+    }
+    
+    
+    func getPasswordFromCell() -> String {
+        return getPasswordCell().textField.text
+    }
+    
+    func getPasswordCell() -> ZSSTextFieldCell {
+        let passwordIndexPath = NSIndexPath(forRow: 1, inSection: 0)
+        return tableView.cellForRowAtIndexPath(passwordIndexPath) as ZSSTextFieldCell
     }
 }

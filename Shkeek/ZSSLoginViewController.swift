@@ -132,6 +132,9 @@ class ZSSLoginViewController: UIViewController {
     }
     
     func showHome() -> Void {
-        println("showing home")
+        let hvc = ZSSHomeViewController()
+        let nav = UINavigationController(rootViewController: hvc)
+        presentViewController(nav, animated: true, completion: nil)
     }
+
 }

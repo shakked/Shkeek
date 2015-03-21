@@ -92,7 +92,21 @@ class ZSSLoginQuerier: NSObject {
     func agreeToEULA(#completion:((succeeded: Bool, error: NSError?) -> Void)) {
         PFUser.currentUser().setValue(NSNumber(bool: true), forKey: "didAgreeToEULA")
         PFUser.currentUser().saveInBackgroundWithBlock { (succeeded: Bool, error: NSError?) -> Void in
+            if succeeded {
+                ZSSLocalQuerier.sharedQuerier.currentUser().setValue(NSNumber(bool: true), forKey: "didAgreeToEULA")
+            }
             completion(succeeded: succeeded, error: error)
+        }
+    }
+    
+    func logInUser(username: String, password: String, completion:((succeeded: Bool, error: NSError?) -> Void)) {
+        PFUser.logInWithUsernameInBackground(username, password: password)
+            { (user: PFUser!, error:NSError!) -> Void in
+                if let user = user {
+                    ZSSUserSyncer.sharedQuerier.syncLocalUserToCloudUser()
+                    completion(succeeded: true, error: error)
+                }
+                completion(succeeded: false, error: error)
         }
     }
 }

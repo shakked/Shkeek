@@ -16,6 +16,14 @@ class ZSSEulaViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override init() {
+        super.init(nibName: "ZSSEulaViewController", bundle: NSBundle.mainBundle())
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -26,11 +34,18 @@ class ZSSEulaViewController: UIViewController {
     @IBAction func iAgreeButtonPressed(sender: AnyObject) {
         ZSSLoginQuerier.sharedQuerier.agreeToEULA { (succeeded: Bool, error: NSError?) -> Void in
             if succeeded {
-                ZSSLocalQuerier.sharedQuerier.currentUser().setValue(NSNumber(bool: true), forKey: "didAgreeToEULA")
+                self.showHome()
             } else {
                 println("Something went wrong in agreeToEula()")
             }
         }
     }
+    
+    func showHome() -> Void{
+        let hvc = ZSSHomeViewController()
+        let nav = UINavigationController(rootViewController: hvc)
+        presentViewController(nav, animated: true, completion: nil)
+    }
+    
 
 }

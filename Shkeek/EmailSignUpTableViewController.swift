@@ -111,12 +111,18 @@ class EmailSignUpTableViewController : UITableViewController {
             let userInfo : [String: String] = ["firstName" : getFirstNameFromCell(), "lastName" : getLastNameFromCell(), "email" : getEmailFromCell(), "username" : getUsernameFromCell(), "password" : getPasswordFromCell()]
             ZSSLoginQuerier.sharedQuerier.signUpAndConfigureEmailLinkedUser(userInfo: userInfo, completion: { (succeeded, error) -> Void in
                 if succeeded {
-                    ZSSUserSyncer.sharedQuerier.syncLocalUserToCloudUser()
+                    self.showEULA()
                 } else {    
                     println("error: \(error!)")
                 }
             })
         }
+    }
+    
+    func showEULA() -> Void {
+        let evc = ZSSEulaViewController()
+        let nav = UINavigationController(rootViewController: evc)
+        self.presentViewController(nav, animated: true, completion: nil)
     }
     
     func areFieldsValid() -> Bool {

@@ -20,19 +20,17 @@
 		4A1E44511ABA16FA002C167B /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4A1E444F1ABA16FA002C167B /* Keys.plist */; };
 		4A20C3C81AB9CCC400AC6338 /* ZSSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A20C3C61AB9CCC400AC6338 /* ZSSLoginViewController.swift */; };
 		4A20C3C91AB9CCC400AC6338 /* ZSSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A20C3C71AB9CCC400AC6338 /* ZSSLoginViewController.xib */; };
+		4A25347D1ABDF88900B18435 /* ZSSHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A25347B1ABDF88900B18435 /* ZSSHomeViewController.swift */; };
+		4A25347E1ABDF88900B18435 /* ZSSHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A25347C1ABDF88900B18435 /* ZSSHomeViewController.xib */; };
 		4A613FD21AB7268F00D0F331 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A613FD11AB7268F00D0F331 /* AppDelegate.swift */; };
 		4A613FD91AB7268F00D0F331 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A613FD81AB7268F00D0F331 /* Images.xcassets */; };
 		4A613FDC1AB7268F00D0F331 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A613FDA1AB7268F00D0F331 /* LaunchScreen.xib */; };
 		4A6924C41AB733F50019487A /* ZSSGroupQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6924C31AB733F50019487A /* ZSSGroupQuerier.swift */; };
-		4A6924C51AB733F50019487A /* ZSSGroupQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6924C31AB733F50019487A /* ZSSGroupQuerier.swift */; };
 		4A6924C71AB734010019487A /* ZSSAnnouncementQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6924C61AB734010019487A /* ZSSAnnouncementQuerier.swift */; };
-		4A6924C81AB734010019487A /* ZSSAnnouncementQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6924C61AB734010019487A /* ZSSAnnouncementQuerier.swift */; };
 		4A69A52F1ABDC23500290AC5 /* ZSSEulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69A52D1ABDC23500290AC5 /* ZSSEulaViewController.swift */; };
 		4A69A5301ABDC23500290AC5 /* ZSSEulaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A69A52E1ABDC23500290AC5 /* ZSSEulaViewController.xib */; };
 		4A7C60401AB74A5600DA34B1 /* ZSSLoginQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C603F1AB74A5600DA34B1 /* ZSSLoginQuerier.swift */; };
-		4A7C60411AB74A5600DA34B1 /* ZSSLoginQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C603F1AB74A5600DA34B1 /* ZSSLoginQuerier.swift */; };
 		4A7C60431AB7A15100DA34B1 /* ZSSGroupSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60421AB7A15100DA34B1 /* ZSSGroupSyncer.swift */; };
-		4A7C60441AB7A15100DA34B1 /* ZSSGroupSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60421AB7A15100DA34B1 /* ZSSGroupSyncer.swift */; };
 		4A7C60461AB7A23100DA34B1 /* ZSSLocalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */; };
 		4A7C60491AB7A23800DA34B1 /* ZSSLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60481AB7A23800DA34B1 /* ZSSLocalStore.swift */; };
 		4AB7738B1AB87DA800D33B9A /* testZSSLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7738A1AB87DA800D33B9A /* testZSSLocalStore.swift */; };
@@ -76,6 +74,8 @@
 		4A1E444F1ABA16FA002C167B /* Keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Keys.plist; path = ../Keys.plist; sourceTree = "<group>"; };
 		4A20C3C61AB9CCC400AC6338 /* ZSSLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLoginViewController.swift; sourceTree = "<group>"; };
 		4A20C3C71AB9CCC400AC6338 /* ZSSLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSLoginViewController.xib; sourceTree = "<group>"; };
+		4A25347B1ABDF88900B18435 /* ZSSHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSHomeViewController.swift; sourceTree = "<group>"; };
+		4A25347C1ABDF88900B18435 /* ZSSHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSHomeViewController.xib; sourceTree = "<group>"; };
 		4A613FCC1AB7268F00D0F331 /* Shkeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shkeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A613FD01AB7268F00D0F331 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A613FD11AB7268F00D0F331 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +162,8 @@
 				4AD730551ABA4EB500A9F32B /* EmailLoginTableViewController.swift */,
 				4A0146B31ABA4026007DDE52 /* TwitterSignUpTableViewController.swift */,
 				4A0146B51ABA4042007DDE52 /* EmailSignUpTableViewController.swift */,
+				4A25347B1ABDF88900B18435 /* ZSSHomeViewController.swift */,
+				4A25347C1ABDF88900B18435 /* ZSSHomeViewController.xib */,
 				4A1E44461ABA09E3002C167B /* Cells */,
 			);
 			name = ViewControllers;
@@ -340,6 +342,7 @@
 				4A20C3C91AB9CCC400AC6338 /* ZSSLoginViewController.xib in Resources */,
 				4AD7305B1ABA606300A9F32B /* ZSSButtonCell.xib in Resources */,
 				4A1E44431AB9FFFB002C167B /* ZSSTextFieldCell.xib in Resources */,
+				4A25347E1ABDF88900B18435 /* ZSSHomeViewController.xib in Resources */,
 				4A613FDC1AB7268F00D0F331 /* LaunchScreen.xib in Resources */,
 				4A613FD91AB7268F00D0F331 /* Images.xcassets in Resources */,
 				4A1E443F1AB9FBA3002C167B /* ZSSProfilePicCell.xib in Resources */,
@@ -424,6 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A25347D1ABDF88900B18435 /* ZSSHomeViewController.swift in Sources */,
 				4A1E44451ABA039B002C167B /* UIColor+FlatColors.swift in Sources */,
 				4A7C60461AB7A23100DA34B1 /* ZSSLocalFactory.swift in Sources */,
 				4AD730561ABA4EB500A9F32B /* EmailLoginTableViewController.swift in Sources */,
@@ -453,12 +457,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AC9152E1AB93A0A00D48150 /* Shkeek.xcdatamodeld in Sources */,
-				4A7C60441AB7A15100DA34B1 /* ZSSGroupSyncer.swift in Sources */,
-				4A6924C51AB733F50019487A /* ZSSGroupQuerier.swift in Sources */,
 				4AC915311AB9466600D48150 /* Array+Convenience.swift in Sources */,
-				4A7C60411AB74A5600DA34B1 /* ZSSLoginQuerier.swift in Sources */,
 				4AB7738B1AB87DA800D33B9A /* testZSSLocalStore.swift in Sources */,
-				4A6924C81AB734010019487A /* ZSSAnnouncementQuerier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

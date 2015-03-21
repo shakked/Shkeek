@@ -18,15 +18,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.backgroundColor = UIColor.whiteColor()
+        configureParse()
+
+        if PFUser.currentUser() != nil {
+            ZSSUserSyncer.sharedQuerier.syncLocalUserToCloudUser()
+            
+            if !ZSSLocalQuerier.sharedQuerier.userDidFillOutUserInfoForm() {
+                let lvc = ZSSLoginViewController()
+                window?.rootViewController = lvc
+            } else {
+                let hvc = ZSSHomeViewController()
+                let nav = UINavigationController(rootViewController: hvc)
+                window?.rootViewController = nav
+            }
+        } else {
+            let lvc : ZSSLoginViewController = ZSSLoginViewController()
+            window?.rootViewController = lvc
+        }
         
-        let lvc : ZSSLoginViewController = ZSSLoginViewController()
-        window?.rootViewController = lvc
         window?.makeKeyAndVisible()
         
-        configureParse()
         
         return true
     }
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

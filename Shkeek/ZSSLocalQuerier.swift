@@ -21,7 +21,10 @@ class ZSSLocalQuerier: NSObject {
     func userDidFillOutUserInfoForm() -> Bool {
         if ZSSLocalStore.sharedQuerier.userExists() {
             let localUser : NSManagedObject = ZSSLocalStore.sharedQuerier.user()!
-            return (localUser.valueForKey("didFillOutUserInfoForm") as NSNumber).boolValue
+            if let didFillOutUserInfoForm = (localUser.valueForKey("didFillOutUserInfoForm") as? NSNumber)? {
+                return didFillOutUserInfoForm.boolValue
+            }
+            return false
         } else {
             return false
         }
@@ -32,6 +35,10 @@ class ZSSLocalQuerier: NSObject {
             return user
         }
         return ZSSLocalFactory.sharedFactory.createUser()!
+    }
+    
+    func deleteCurrentUser() -> Void {
+        ZSSLocalStore.sharedQuerier.deleteUser()
     }
     
 }

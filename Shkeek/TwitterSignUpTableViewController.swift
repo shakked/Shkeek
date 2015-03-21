@@ -99,15 +99,18 @@ class TwitterSignUpTableViewController: UITableViewController {
             let userInfo : [String : AnyObject] = ["firstName" : getFirstNameFromCell(), "lastName" : getLastNameFromCell(), "email" : getEmailFromCell()]
             ZSSLoginQuerier.sharedQuerier.configureTwitterLinkedUser(userInfo: userInfo, completion: { (succeeded, error) -> Void in
                 if succeeded {
-                    let evc = ZSSEulaViewController()
-                    let nav = UINavigationController(rootViewController: evc)
-                    self.presentViewController(nav, animated: true, completion: nil)
-                    
+                    self.showEULA()
                 } else {
                     //error
                 }
             })
         }
+    }
+    
+    func showEULA() -> Void {
+        let evc = ZSSEulaViewController()
+        let nav = UINavigationController(rootViewController: evc)
+        self.presentViewController(nav, animated: true, completion: nil)
     }
     
     func areFieldsValid() -> Bool {
