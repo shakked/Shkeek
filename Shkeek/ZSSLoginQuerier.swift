@@ -53,4 +53,7 @@ class ZSSLoginQuerier: NSObject {
         })
     }
 
+    func signUpAndConfigureEmailLinkedUser(#userInfo: Dictionary<String, AnyObject>, completion:((succeeded: Bool, error: NSError?) -> Void)) {
+        
+    }
 }

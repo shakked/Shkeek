@@ -12,4 +12,8 @@ extension UIColor {
     class func cloudColor() -> UIColor {
         return UIColor(red: 236.0/255, green: 240.0/256, blue: 241.0/256, alpha: 1.0)
     }
+    
+    class func errorColor() -> UIColor {
+        return UIColor(red: 231.0/255, green: 76.0/256, blue: 60.0/256, alpha: 1.0)
+    }
 }

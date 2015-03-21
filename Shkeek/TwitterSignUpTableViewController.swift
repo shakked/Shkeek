@@ -12,13 +12,31 @@ class TwitterSignUpTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTabelView()
+        configureViews()
+
+    }
+ 
+    func configureViews() -> Void {
+        configureTableView()
+        configureNavBar()
     }
     
-    func configureTabelView () -> Void {
+    func configureTableView() -> Void {
         tableView.registerNib(UINib(nibName: "ZSSTextFieldCell", bundle: nil), forCellReuseIdentifier: "fieldCell")
         tableView.registerNib(UINib(nibName: "ZSSProfilePicCell", bundle: nil), forCellReuseIdentifier: "profileCell")
         tableView.backgroundColor? = UIColor.cloudColor()
+    }
+    
+    func configureNavBar() -> Void {
+        navigationItem.title = "Sign Up"
+        configureNavBarButtons()
+    }
+    
+    func configureNavBarButtons() -> Void {
+        let cancelBarButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: Selector("cancel"))
+        let saveBarButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: Selector("done"))
+        navigationItem.leftBarButtonItem = cancelBarButton
+        navigationItem.rightBarButtonItem = saveBarButton
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,49 +90,78 @@ class TwitterSignUpTableViewController: UITableViewController {
         }
     }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    func cancel() -> Void {
+        dismissViewControllerAnimated(true, completion: nil)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func done() -> Void {
+        if areFieldsValid() {
+            let userInfo : [String : AnyObject] = ["firstName" : getFirstNameFromCell(), "lastName" : getLastNameFromCell(), "email" : getEmailFromCell()]
+            ZSSLoginQuerier.sharedQuerier.configureTwitterLinkedUser(userInfo: userInfo, completion: { (succeeded, error) -> Void in
+                if succeeded {
+                    //show EULA view
+                } else {
+                    //error
+                }
+            })
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    func areFieldsValid() -> Bool {
+        var areValid : Bool
+        
+        let firstName : String = getFirstNameFromCell()
+        let lastName : String = getLastNameFromCell()
+        let email : String = getEmailFromCell()
+        
+        if (firstName.utf16Count <= 0 || lastName.utf16Count <= 0 || email.utf16Count <= 0 || !email.isValidEmail()) {
+            areValid = false
+            println("not valid input")
+        } else {
+            areValid = true
+            println("valid input")
+        }
+        
+        return areValid
+        
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
+    
+    func getFirstNameFromCell() -> String {
+        
+        let firstNameCell = getFirstNameCell()
+        let firstName = firstNameCell.textField.text
+        return firstName
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    
+    func getFirstNameCell() -> ZSSTextFieldCell {
+        let firstNameIndexPath = NSIndexPath(forRow: 1, inSection: 0)
+        let firstNameCell = tableView.cellForRowAtIndexPath(firstNameIndexPath) as ZSSTextFieldCell
+        return firstNameCell
     }
-    */
-
+    
+    func getLastNameFromCell() -> String {
+        let lastNameCell = getLastNameCell()
+        let lastName = lastNameCell.textField.text
+        return lastName
+    }
+    
+    func getLastNameCell() -> ZSSTextFieldCell {
+        let lastNameIndexPath = NSIndexPath(forRow: 2, inSection: 0)
+        let lastNameCell = tableView.cellForRowAtIndexPath(lastNameIndexPath) as ZSSTextFieldCell
+        return lastNameCell
+    }
+    
+    func getEmailFromCell() -> String {
+        let emailCell = getEmailCell()
+        let email : String = emailCell.textField.text
+        return email
+    }
+    
+    func getEmailCell() -> ZSSTextFieldCell {
+        let emailIndexPath : NSIndexPath = NSIndexPath(forRow: 3, inSection: 0)
+        let emailCell : ZSSTextFieldCell = tableView.cellForRowAtIndexPath(emailIndexPath) as ZSSTextFieldCell
+        return emailCell
+    }
+    
+    
 }

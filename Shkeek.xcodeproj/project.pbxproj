@@ -157,11 +157,11 @@
 			children = (
 				4A20C3C61AB9CCC400AC6338 /* ZSSLoginViewController.swift */,
 				4A20C3C71AB9CCC400AC6338 /* ZSSLoginViewController.xib */,
+				4AD730551ABA4EB500A9F32B /* EmailLoginTableViewController.swift */,
 				4A0146B31ABA4026007DDE52 /* TwitterSignUpTableViewController.swift */,
+				4A0146B51ABA4042007DDE52 /* EmailSignUpTableViewController.swift */,
 				4A1376351ABB6C370014A8A7 /* ZSSEULAViewController.swift */,
 				4A1376361ABB6C370014A8A7 /* ZSSEULAViewController.xib */,
-				4A0146B51ABA4042007DDE52 /* EmailSignUpTableViewController.swift */,
-				4AD730551ABA4EB500A9F32B /* EmailLoginTableViewController.swift */,
 				4A1E44461ABA09E3002C167B /* Cells */,
 			);
 			name = ViewControllers;

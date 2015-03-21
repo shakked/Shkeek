@@ -12,10 +12,33 @@ class EmailSignUpTableViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureViews()
+    }
+    
+    func configureViews() -> Void {
+        configureTableView()
+        configureNavBar()
+    }
+    
+    func configureTableView() -> Void {
         tableView.registerNib(UINib(nibName: "ZSSTextFieldCell", bundle: nil), forCellReuseIdentifier: "fieldCell")
         tableView.registerNib(UINib(nibName: "ZSSProfilePicCell", bundle: nil), forCellReuseIdentifier: "profileCell")
         tableView.backgroundColor? = UIColor.cloudColor()
     }
+    
+    func configureNavBar() -> Void {
+        navigationItem.title = "Sign Up"
+        configureNavBarButtons()
+    }
+    
+    func configureNavBarButtons() -> Void {
+        let cancelBarButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: Selector("cancel"))
+        let saveBarButton : UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: Selector("done"))
+        navigationItem.leftBarButtonItem = cancelBarButton
+        navigationItem.rightBarButtonItem = saveBarButton
+    }
+
     
     
     
@@ -54,6 +77,8 @@ class EmailSignUpTableViewController : UITableViewController {
             case 3:
                 cell.fieldLabel?.text = "Email"
             case 4:
+                cell.fieldLabel?.text = "Username"
+            case 5:
                 cell.fieldLabel?.text = "Password"
                 cell.textField.secureTextEntry = true
             default:
@@ -64,6 +89,8 @@ class EmailSignUpTableViewController : UITableViewController {
         }
     }
     
+    
+    
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 0 {
             return 170.0
@@ -71,50 +98,98 @@ class EmailSignUpTableViewController : UITableViewController {
             return 40.0
         }
     }
+
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the specified item to be editable.
-    return true
+    func cancel() -> Void {
+        dismissViewControllerAnimated(true, completion: nil)
     }
-    */
     
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    func done() -> Void {
+        if areFieldsValid() {
+            let userInfo : [String : AnyObject] = ["firstName" : getFirstNameFromCell(), "lastName" : getLastNameFromCell(), "email" : getEmailFromCell(), "username" : getUsernameCell(), "password" : getPasswordCell()]
+            
+        }
     }
+    
+    func areFieldsValid() -> Bool {
+        var areValid : Bool = true
+        
+        let firstName = getFirstNameFromCell()
+        let lastName = getLastNameFromCell()
+        let email = getEmailFromCell()
+        let username = getUsernameFromCell()
+        let password = getPasswordFromCell()
+        
+        if (firstName.utf16Count <= 0) {
+            areValid = false
+            getFirstNameCell().backgroundColor = UIColor.errorColor()
+        }
+        if (lastName.utf16Count <= 0) {
+            areValid = false
+            getLastNameCell().backgroundColor = UIColor.errorColor()
+        }
+        if (!email.isValidEmail()) {
+            areValid = false
+            getEmailCell().backgroundColor = UIColor.errorColor()
+        }
+        if (username.utf16Count <= 0) {
+            areValid = false
+            getUsernameCell().backgroundColor = UIColor.errorColor()
+        }
+        if (password.utf16Count <= 6) {
+            areValid = false
+            getPasswordCell().backgroundColor = UIColor.errorColor()
+        }
+        
+        return areValid
     }
-    */
     
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-    
+    func getFirstNameFromCell() -> String {
+        return getFirstNameCell().textField.text
     }
-    */
     
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return NO if you do not want the item to be re-orderable.
-    return true
+    func getFirstNameCell() -> ZSSTextFieldCell {
+        let firstNameIndexPath = NSIndexPath(forRow: 1, inSection: 0)
+        return tableView.cellForRowAtIndexPath(firstNameIndexPath) as ZSSTextFieldCell
     }
-    */
     
-    /*
-    // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    func getLastNameFromCell() -> String {
+        return getLastNameCell().textField.text
     }
-    */
     
+    func getLastNameCell() -> ZSSTextFieldCell {
+        let lastNameIndexPath = NSIndexPath(forRow: 2, inSection: 0)
+        return tableView.cellForRowAtIndexPath(lastNameIndexPath) as ZSSTextFieldCell
+    }
+    
+    
+    func getEmailFromCell() -> String {
+        return getEmailCell().textField.text
+    }
+    
+    func getEmailCell() -> ZSSTextFieldCell {
+        let emailIndexPath = NSIndexPath(forRow: 3, inSection: 0)
+        return tableView.cellForRowAtIndexPath(emailIndexPath) as ZSSTextFieldCell
+    }
+    
+    
+    func getUsernameFromCell() -> String {
+        return getUsernameCell().textField.text
+    }
+    
+    func getUsernameCell() -> ZSSTextFieldCell {
+        let usernameIndexPath = NSIndexPath(forRow: 4, inSection: 0)
+        return tableView.cellForRowAtIndexPath(usernameIndexPath) as ZSSTextFieldCell
+    }
+    
+    
+    func getPasswordFromCell() -> String {
+        return getPasswordCell().textField.text
+    }
+    
+    func getPasswordCell() -> ZSSTextFieldCell {
+        let passwordIndexPath = NSIndexPath(forRow: 5, inSection: 0)
+        return tableView.cellForRowAtIndexPath(passwordIndexPath) as ZSSTextFieldCell
+    }
 }
