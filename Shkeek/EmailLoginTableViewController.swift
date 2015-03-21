@@ -41,7 +41,7 @@ class EmailLoginTableViewController: UITableViewController {
         case 0:
             return 2
         case 1:
-            return 1
+            return 2
         default:
             return 0
         }
@@ -65,12 +65,15 @@ class EmailLoginTableViewController: UITableViewController {
                 return cell
             }
         case 1:
+            let cell = tableView.dequeueReusableCellWithIdentifier("buttonCell", forIndexPath: indexPath) as ZSSButtonCell
             switch indexPath.row {
             case 0:
-                let cell = tableView.dequeueReusableCellWithIdentifier("buttonCell", forIndexPath: indexPath) as ZSSButtonCell
-                cell.button.setTitle("Sign up", forState: UIControlState.Normal)
+                cell.button.setTitle("Log in", forState: UIControlState.Normal)
+                cell.button.titleLabel?.font = UIFont(name: "Avenir", size: 18.0)
                 println(indexPath)
                 return cell
+            case 1:
+                cell.button.setTitle("Sign Up", forState: UIControlState.Normal)
             default:
                 break
             }
@@ -91,6 +94,8 @@ class EmailLoginTableViewController: UITableViewController {
         case 1:
             switch indexPath.row {
             case 0:
+                logIn()
+            case 1:
                 let esutvc : EmailSignUpTableViewController = EmailSignUpTableViewController()
                 self.navigationController!.pushViewController(esutvc, animated: true)
             default:
@@ -105,4 +110,8 @@ class EmailLoginTableViewController: UITableViewController {
         return 40
     }
 
+    func logIn() -> Void {
+        println("trying to log in")
+        
+    }
 }

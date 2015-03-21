@@ -103,7 +103,7 @@ class EmailSignUpTableViewController : UITableViewController {
 
     
     func cancel() -> Void {
-        dismissViewControllerAnimated(true, completion: nil)
+        navigationController?.popViewControllerAnimated(true)
     }
     
     func done() -> Void {
@@ -111,8 +111,8 @@ class EmailSignUpTableViewController : UITableViewController {
             let userInfo : [String: String] = ["firstName" : getFirstNameFromCell(), "lastName" : getLastNameFromCell(), "email" : getEmailFromCell(), "username" : getUsernameFromCell(), "password" : getPasswordFromCell()]
             ZSSLoginQuerier.sharedQuerier.signUpAndConfigureEmailLinkedUser(userInfo: userInfo, completion: { (succeeded, error) -> Void in
                 if succeeded {
-                    println("Signed up successfully")
-                } else {
+                    ZSSUserSyncer.sharedQuerier.syncLocalUserToCloudUser()
+                } else {    
                     println("error: \(error!)")
                 }
             })

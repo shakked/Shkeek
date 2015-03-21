@@ -99,7 +99,9 @@ class TwitterSignUpTableViewController: UITableViewController {
             let userInfo : [String : AnyObject] = ["firstName" : getFirstNameFromCell(), "lastName" : getLastNameFromCell(), "email" : getEmailFromCell()]
             ZSSLoginQuerier.sharedQuerier.configureTwitterLinkedUser(userInfo: userInfo, completion: { (succeeded, error) -> Void in
                 if succeeded {
-                    //show EULA view
+                    ZSSUserSyncer.sharedQuerier.syncLocalUserToCloudUser()
+                    let evc = ZSSEulaViewController()
+                    
                 } else {
                     //error
                 }

@@ -10,8 +10,6 @@
 		4A0146B41ABA4026007DDE52 /* TwitterSignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0146B31ABA4026007DDE52 /* TwitterSignUpTableViewController.swift */; };
 		4A0146B61ABA4042007DDE52 /* EmailSignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0146B51ABA4042007DDE52 /* EmailSignUpTableViewController.swift */; };
 		4A0146B81ABA4AF9007DDE52 /* ZSSLocalQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0146B71ABA4AF9007DDE52 /* ZSSLocalQuerier.swift */; };
-		4A1376371ABB6C370014A8A7 /* ZSSEULAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1376351ABB6C370014A8A7 /* ZSSEULAViewController.swift */; };
-		4A1376381ABB6C370014A8A7 /* ZSSEULAViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A1376361ABB6C370014A8A7 /* ZSSEULAViewController.xib */; };
 		4A13763D1ABB78740014A8A7 /* String+EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A13763B1ABB781B0014A8A7 /* String+EmailValidator.swift */; };
 		4A1E443E1AB9FBA3002C167B /* ZSSProfilePicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1E443C1AB9FBA3002C167B /* ZSSProfilePicCell.swift */; };
 		4A1E443F1AB9FBA3002C167B /* ZSSProfilePicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A1E443D1AB9FBA3002C167B /* ZSSProfilePicCell.xib */; };
@@ -29,6 +27,8 @@
 		4A6924C51AB733F50019487A /* ZSSGroupQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6924C31AB733F50019487A /* ZSSGroupQuerier.swift */; };
 		4A6924C71AB734010019487A /* ZSSAnnouncementQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6924C61AB734010019487A /* ZSSAnnouncementQuerier.swift */; };
 		4A6924C81AB734010019487A /* ZSSAnnouncementQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6924C61AB734010019487A /* ZSSAnnouncementQuerier.swift */; };
+		4A69A52F1ABDC23500290AC5 /* ZSSEulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69A52D1ABDC23500290AC5 /* ZSSEulaViewController.swift */; };
+		4A69A5301ABDC23500290AC5 /* ZSSEulaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A69A52E1ABDC23500290AC5 /* ZSSEulaViewController.xib */; };
 		4A7C60401AB74A5600DA34B1 /* ZSSLoginQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C603F1AB74A5600DA34B1 /* ZSSLoginQuerier.swift */; };
 		4A7C60411AB74A5600DA34B1 /* ZSSLoginQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C603F1AB74A5600DA34B1 /* ZSSLoginQuerier.swift */; };
 		4A7C60431AB7A15100DA34B1 /* ZSSGroupSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60421AB7A15100DA34B1 /* ZSSGroupSyncer.swift */; };
@@ -67,8 +67,6 @@
 		4A0146B31ABA4026007DDE52 /* TwitterSignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterSignUpTableViewController.swift; sourceTree = "<group>"; };
 		4A0146B51ABA4042007DDE52 /* EmailSignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignUpTableViewController.swift; sourceTree = "<group>"; };
 		4A0146B71ABA4AF9007DDE52 /* ZSSLocalQuerier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLocalQuerier.swift; sourceTree = "<group>"; };
-		4A1376351ABB6C370014A8A7 /* ZSSEULAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSEULAViewController.swift; sourceTree = "<group>"; };
-		4A1376361ABB6C370014A8A7 /* ZSSEULAViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSEULAViewController.xib; sourceTree = "<group>"; };
 		4A13763B1ABB781B0014A8A7 /* String+EmailValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+EmailValidator.swift"; sourceTree = "<group>"; };
 		4A1E443C1AB9FBA3002C167B /* ZSSProfilePicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSProfilePicCell.swift; sourceTree = "<group>"; };
 		4A1E443D1AB9FBA3002C167B /* ZSSProfilePicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSProfilePicCell.xib; sourceTree = "<group>"; };
@@ -87,6 +85,8 @@
 		4A613FE61AB7268F00D0F331 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A6924C31AB733F50019487A /* ZSSGroupQuerier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSGroupQuerier.swift; sourceTree = "<group>"; };
 		4A6924C61AB734010019487A /* ZSSAnnouncementQuerier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSAnnouncementQuerier.swift; sourceTree = "<group>"; };
+		4A69A52D1ABDC23500290AC5 /* ZSSEulaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZSSEulaViewController.swift; path = ../ZSSEulaViewController.swift; sourceTree = "<group>"; };
+		4A69A52E1ABDC23500290AC5 /* ZSSEulaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZSSEulaViewController.xib; path = ../ZSSEulaViewController.xib; sourceTree = "<group>"; };
 		4A7C603F1AB74A5600DA34B1 /* ZSSLoginQuerier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLoginQuerier.swift; sourceTree = "<group>"; };
 		4A7C60421AB7A15100DA34B1 /* ZSSGroupSyncer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSGroupSyncer.swift; sourceTree = "<group>"; };
 		4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLocalFactory.swift; sourceTree = "<group>"; };
@@ -155,13 +155,13 @@
 		4A20C3CA1AB9CCEB00AC6338 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4A69A52D1ABDC23500290AC5 /* ZSSEulaViewController.swift */,
+				4A69A52E1ABDC23500290AC5 /* ZSSEulaViewController.xib */,
 				4A20C3C61AB9CCC400AC6338 /* ZSSLoginViewController.swift */,
 				4A20C3C71AB9CCC400AC6338 /* ZSSLoginViewController.xib */,
 				4AD730551ABA4EB500A9F32B /* EmailLoginTableViewController.swift */,
 				4A0146B31ABA4026007DDE52 /* TwitterSignUpTableViewController.swift */,
 				4A0146B51ABA4042007DDE52 /* EmailSignUpTableViewController.swift */,
-				4A1376351ABB6C370014A8A7 /* ZSSEULAViewController.swift */,
-				4A1376361ABB6C370014A8A7 /* ZSSEULAViewController.xib */,
 				4A1E44461ABA09E3002C167B /* Cells */,
 			);
 			name = ViewControllers;
@@ -335,7 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A1376381ABB6C370014A8A7 /* ZSSEULAViewController.xib in Resources */,
+				4A69A5301ABDC23500290AC5 /* ZSSEulaViewController.xib in Resources */,
 				4A1E44501ABA16FA002C167B /* Keys.plist in Resources */,
 				4A20C3C91AB9CCC400AC6338 /* ZSSLoginViewController.xib in Resources */,
 				4AD7305B1ABA606300A9F32B /* ZSSButtonCell.xib in Resources */,
@@ -424,7 +424,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A1376371ABB6C370014A8A7 /* ZSSEULAViewController.swift in Sources */,
 				4A1E44451ABA039B002C167B /* UIColor+FlatColors.swift in Sources */,
 				4A7C60461AB7A23100DA34B1 /* ZSSLocalFactory.swift in Sources */,
 				4AD730561ABA4EB500A9F32B /* EmailLoginTableViewController.swift in Sources */,
@@ -444,6 +443,7 @@
 				4A0146B81ABA4AF9007DDE52 /* ZSSLocalQuerier.swift in Sources */,
 				4A20C3C81AB9CCC400AC6338 /* ZSSLoginViewController.swift in Sources */,
 				4A6924C71AB734010019487A /* ZSSAnnouncementQuerier.swift in Sources */,
+				4A69A52F1ABDC23500290AC5 /* ZSSEulaViewController.swift in Sources */,
 				4AC915301AB9466600D48150 /* Array+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
