@@ -9,6 +9,8 @@
 import UIKit
 
 class EmailSignUpTableViewController : UITableViewController {
+    //FIXME add username check if available
+    //FIXME add email check if available
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,8 +108,14 @@ class EmailSignUpTableViewController : UITableViewController {
     
     func done() -> Void {
         if areFieldsValid() {
-            let userInfo : [String : AnyObject] = ["firstName" : getFirstNameFromCell(), "lastName" : getLastNameFromCell(), "email" : getEmailFromCell(), "username" : getUsernameCell(), "password" : getPasswordCell()]
-            
+            let userInfo : [String: String] = ["firstName" : getFirstNameFromCell(), "lastName" : getLastNameFromCell(), "email" : getEmailFromCell(), "username" : getUsernameFromCell(), "password" : getPasswordFromCell()]
+            ZSSLoginQuerier.sharedQuerier.signUpAndConfigureEmailLinkedUser(userInfo: userInfo, completion: { (succeeded, error) -> Void in
+                if succeeded {
+                    println("Signed up successfully")
+                } else {
+                    println("error: \(error!)")
+                }
+            })
         }
     }
     

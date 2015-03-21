@@ -53,7 +53,16 @@ class ZSSLoginQuerier: NSObject {
         })
     }
 
-    func signUpAndConfigureEmailLinkedUser(#userInfo: Dictionary<String, AnyObject>, completion:((succeeded: Bool, error: NSError?) -> Void)) {
+    func signUpAndConfigureEmailLinkedUser(#userInfo: Dictionary<String, String>, completion:((succeeded: Bool, error: NSError?) -> Void)) {
+        var user = PFUser()
+        user.email = userInfo["email"]
+        user.setValue(userInfo["firstName"], forKey: "firstName")
+        user.setValue(userInfo["lastName"], forKey: "lastName")
+        user.username = userInfo["username"]
+        user.password = userInfo["password"]
         
+        user.signUpInBackgroundWithBlock { (succeeded: Bool, error: NSError?) -> Void in
+            completion(succeeded: succeeded, error: error)
+        }
     }
 }
