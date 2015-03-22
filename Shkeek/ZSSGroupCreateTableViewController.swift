@@ -12,12 +12,7 @@ class ZSSGroupCreateTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        configureViews()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,12 +29,13 @@ class ZSSGroupCreateTableViewController: UITableViewController {
     func configureTableView() -> Void {
         tableView.registerNib(UINib(nibName: "ZSSTextFieldCell", bundle: nil), forCellReuseIdentifier: "fieldCell")
         tableView.registerNib(UINib(nibName: "ZSSProfilePicCell", bundle: nil), forCellReuseIdentifier: "profileCell")
+        tableView.registerNib(UINib(nibName: "ZSSTextViewCell", bundle: nil), forCellReuseIdentifier: "textViewCell")
         tableView.registerNib(UINib(nibName: "ZSSChoiceCell", bundle: nil), forCellReuseIdentifier: "choiceCell")
         tableView.backgroundColor? = UIColor.cloudColor()
     }
     
     func configureNavBar() -> Void {
-        navigationItem.title = "Sign Up"
+        navigationItem.title = "Create a Group"
         configureNavBarButtons()
     }
     
@@ -61,40 +57,82 @@ class ZSSGroupCreateTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 6
+        return 5
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell : ZSSProfilePicCell = tableView.dequeueReusableCellWithIdentifier("profileCell") as ZSSProfilePicCell
-            cell.selectionStyle = UITableViewCellSelectionStyle.None
-            return cell
-        } else {
-            let cell : ZSSTextFieldCell = tableView.dequeueReusableCellWithIdentifier("fieldCell", forIndexPath: indexPath) as ZSSTextFieldCell
-            cell.selectionStyle = UITableViewCellSelectionStyle.None
-            switch indexPath.row{
+        switch indexPath.row{
+            case 0:
+                let cell : ZSSProfilePicCell = tableView.dequeueReusableCellWithIdentifier("profileCell") as ZSSProfilePicCell
+                cell.selectionStyle = UITableViewCellSelectionStyle.None
+                return cell
             case 1:
-                cell.fieldLabel?.text = "Group Name"
+                let cell : ZSSTextFieldCell = tableView.dequeueReusableCellWithIdentifier("fieldCell") as ZSSTextFieldCell
+                cell.fieldLabel.text = "Group Name"
+                return cell
             case 2:
-                cell.fieldLabel?.text = "Category"
+                let cell : ZSSTextFieldCell = tableView.dequeueReusableCellWithIdentifier("fieldCell") as ZSSTextFieldCell
+                cell.fieldLabel.text = "Category"
+                return cell
             case 3:
-                cell.fieldLabel?.text = "Group Description"
+                let cell : ZSSChoiceCell = tableView.dequeueReusableCellWithIdentifier("choiceCell") as ZSSChoiceCell
+                cell.choice1button.setTitle("Public", forState: UIControlState.Normal)
+                cell.choice1buttonPressedBlock = { (Void) -> Void in
+                    println("choice1pressed")
+                }
+                cell.imageView1.backgroundColor = UIColor.blueColor()
+                cell.imageView1.layer.cornerRadius = 10.0
+                cell.imageView1.layer.masksToBounds = true
+                
+                cell.choice2button.setTitle("Private", forState: UIControlState.Normal)
+                cell.choice2buttonPressedBlock = { (Void) -> Void in
+                    println("choice2pressed")
+                }
+                cell.imageView2.backgroundColor = UIColor.blueColor()
+                cell.imageView2.layer.cornerRadius = 10.0
+                cell.imageView2.layer.masksToBounds = true
+                
+                cell.choice3button.setTitle("Hidden", forState: UIControlState.Normal)
+                cell.choice3buttonPressedBlock = { (Void) -> Void in
+                    println("choice3pressed")
+                }
+                cell.imageView3.backgroundColor = UIColor.blueColor()
+                cell.imageView3.layer.cornerRadius = 10.0
+                cell.imageView3.layer.masksToBounds = true
+            
+                return cell
+            case 4:
+                let cell : ZSSTextViewCell = tableView.dequeueReusableCellWithIdentifier("textViewCell") as ZSSTextViewCell
+                cell.titleLabel.text = "Group Description"
+                cell.textView.text = ""
+                return cell
             default:
                 break
-            }
-            
-            return cell
         }
+        return UITableViewCell()
     }
     
     
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 170.0
-        } else {
-            return 40.0
+        switch indexPath.row {
+        case 0:
+            return 170
+        case 1, 2, 3:
+            return 40
+        case 4:
+            return 200
+        default:
+            return 50
         }
+    }
+    
+    func done() -> Void {
+        println("done...")
+    }
+    
+    func cancel() -> Void {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }

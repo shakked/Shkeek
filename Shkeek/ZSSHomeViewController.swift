@@ -41,6 +41,11 @@ class ZSSHomeViewController: UIViewController {
         presentViewController(lvc, animated: true, completion: nil)
     }
     
+    @IBAction func showCreateGroup(sender: AnyObject) {
+        let gctvc = ZSSGroupCreateTableViewController()
+        let nav = UINavigationController(rootViewController: gctvc)
+        presentViewController(nav, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

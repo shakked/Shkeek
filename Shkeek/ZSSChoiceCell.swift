@@ -10,10 +10,6 @@ import UIKit
 
 class ZSSChoiceCell: UITableViewCell {
 
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,26 +21,29 @@ class ZSSChoiceCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    var button1pressedBlock : (Void) -> Void
-    var button2pressedBlock : (Void) -> Void
-    var button3pressedBlock : (Void) -> Void
+    var choice1buttonPressedBlock : ((Void) -> Void)!
+    var choice2buttonPressedBlock : ((Void) -> Void)!
+    var choice3buttonPressedBlock : ((Void) -> Void)!
+    
+    @IBOutlet weak var choice1button: UIButton!
+    @IBOutlet weak var choice2button: UIButton!
+    @IBOutlet weak var choice3button: UIButton!
     
     @IBOutlet weak var imageView1: UIImageView!
-    @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var imageView2: UIImageView!
-    @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var imageView3: UIImageView!
-    @IBOutlet weak var button3: UIButton!
-    
-    @IBAction func button1pressed(sender: AnyObject) {
-        button1pressedBlock()
+   
+    @IBAction func chocie1buttonPressed(sender: AnyObject) {
+        choice1buttonPressedBlock()
     }
     
-    @IBAction func button2pressed(sender: AnyObject) {
-        button2pressedBlock()
+    @IBAction func choice2buttonPressed(sender: AnyObject) {
+        choice2buttonPressedBlock()
     }
     
-    @IBAction func button3pressed(sender: AnyObject) {
-        button3pressedBlock()
+    @IBAction func choice3buttonPressed(sender: AnyObject) {
+        choice3buttonPressedBlock()
     }
+    
+    
 }

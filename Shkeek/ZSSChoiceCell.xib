@@ -19,11 +19,11 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lO4-vx-Df6">
                                 <rect key="frame" x="53" y="7" width="54" height="30"/>
-                                <state key="normal" title="button1">
+                                <state key="normal" title="choice1">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="button1pressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qtE-N2-Gfc"/>
+                                    <action selector="chocie1buttonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="C3e-NH-MeL"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w0O-3C-KuM">
@@ -40,11 +40,11 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXo-uS-YWP">
                                 <rect key="frame" x="53" y="7" width="54" height="30"/>
-                                <state key="normal" title="button2">
+                                <state key="normal" title="choice2">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="button2pressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="45p-Sa-XX4"/>
+                                    <action selector="choice2buttonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RNF-nP-FSX"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R1E-WP-Dmy">
@@ -61,11 +61,11 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKT-fn-HZv">
                                 <rect key="frame" x="53" y="7" width="54" height="30"/>
-                                <state key="normal" title="button3">
+                                <state key="normal" title="choice3">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="button3pressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="aPQ-oW-ePE"/>
+                                    <action selector="choice3buttonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tSK-8g-GtU"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KYF-HC-a9c">
@@ -92,12 +92,12 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="button1" destination="lO4-vx-Df6" id="jKO-e8-16J"/>
-                <outlet property="button2" destination="xXo-uS-YWP" id="pz2-12-C8B"/>
-                <outlet property="button3" destination="hKT-fn-HZv" id="RAc-qB-BIt"/>
-                <outlet property="imageView1" destination="w0O-3C-KuM" id="wI9-WQ-tFC"/>
-                <outlet property="imageView2" destination="R1E-WP-Dmy" id="GUA-Fl-NF6"/>
-                <outlet property="imageView3" destination="KYF-HC-a9c" id="BM7-KY-5l4"/>
+                <outlet property="choice1button" destination="lO4-vx-Df6" id="NN6-lw-WWM"/>
+                <outlet property="choice2button" destination="xXo-uS-YWP" id="IVa-ug-Cj1"/>
+                <outlet property="choice3button" destination="hKT-fn-HZv" id="FYg-bl-A9e"/>
+                <outlet property="imageView1" destination="w0O-3C-KuM" id="0zk-YD-phe"/>
+                <outlet property="imageView2" destination="R1E-WP-Dmy" id="h5L-Gc-bHj"/>
+                <outlet property="imageView3" destination="KYF-HC-a9c" id="hxF-VZ-bH9"/>
             </connections>
             <point key="canvasLocation" x="434" y="369"/>
         </tableViewCell>

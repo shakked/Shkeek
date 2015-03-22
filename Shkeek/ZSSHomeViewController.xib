@@ -42,6 +42,15 @@
                         <action selector="printUserInfo:" destination="-1" eventType="touchUpInside" id="pOF-B6-YCk"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqD-n9-Zbl">
+                    <rect key="frame" x="248" y="336" width="125" height="30"/>
+                    <state key="normal" title="showCreateGroup">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="showCreateGroup:" destination="-1" eventType="touchUpInside" id="FzR-JD-2yd"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>

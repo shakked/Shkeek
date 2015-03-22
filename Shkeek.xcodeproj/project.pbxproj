@@ -33,6 +33,8 @@
 		4A7C60431AB7A15100DA34B1 /* ZSSGroupSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60421AB7A15100DA34B1 /* ZSSGroupSyncer.swift */; };
 		4A7C60461AB7A23100DA34B1 /* ZSSLocalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */; };
 		4A7C60491AB7A23800DA34B1 /* ZSSLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60481AB7A23800DA34B1 /* ZSSLocalStore.swift */; };
+		4AA5BB301ABE61A900CE458A /* ZSSTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA5BB2E1ABE61A900CE458A /* ZSSTextViewCell.swift */; };
+		4AA5BB311ABE61A900CE458A /* ZSSTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AA5BB2F1ABE61A900CE458A /* ZSSTextViewCell.xib */; };
 		4AB7738B1AB87DA800D33B9A /* testZSSLocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7738A1AB87DA800D33B9A /* testZSSLocalStore.swift */; };
 		4ABCAA1A1ABE5B8F008F5958 /* ZSSGroupCreateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABCAA191ABE5B8F008F5958 /* ZSSGroupCreateTableViewController.swift */; };
 		4ABCAA1D1ABE5D8E008F5958 /* ZSSChoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ABCAA1B1ABE5D8E008F5958 /* ZSSChoiceCell.swift */; };
@@ -94,6 +96,8 @@
 		4A7C60421AB7A15100DA34B1 /* ZSSGroupSyncer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSGroupSyncer.swift; sourceTree = "<group>"; };
 		4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLocalFactory.swift; sourceTree = "<group>"; };
 		4A7C60481AB7A23800DA34B1 /* ZSSLocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLocalStore.swift; sourceTree = "<group>"; };
+		4AA5BB2E1ABE61A900CE458A /* ZSSTextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSTextViewCell.swift; sourceTree = "<group>"; };
+		4AA5BB2F1ABE61A900CE458A /* ZSSTextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSTextViewCell.xib; sourceTree = "<group>"; };
 		4AB7738A1AB87DA800D33B9A /* testZSSLocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testZSSLocalStore.swift; sourceTree = "<group>"; };
 		4ABCAA191ABE5B8F008F5958 /* ZSSGroupCreateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSGroupCreateTableViewController.swift; sourceTree = "<group>"; };
 		4ABCAA1B1ABE5D8E008F5958 /* ZSSChoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSChoiceCell.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 				4A1E44411AB9FFFB002C167B /* ZSSTextFieldCell.xib */,
 				4AD730581ABA606300A9F32B /* ZSSButtonCell.swift */,
 				4AD730591ABA606300A9F32B /* ZSSButtonCell.xib */,
+				4AA5BB2E1ABE61A900CE458A /* ZSSTextViewCell.swift */,
+				4AA5BB2F1ABE61A900CE458A /* ZSSTextViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -356,6 +362,7 @@
 			files = (
 				4A69A5301ABDC23500290AC5 /* ZSSEulaViewController.xib in Resources */,
 				4A1E44501ABA16FA002C167B /* Keys.plist in Resources */,
+				4AA5BB311ABE61A900CE458A /* ZSSTextViewCell.xib in Resources */,
 				4A20C3C91AB9CCC400AC6338 /* ZSSLoginViewController.xib in Resources */,
 				4AD7305B1ABA606300A9F32B /* ZSSButtonCell.xib in Resources */,
 				4A1E44431AB9FFFB002C167B /* ZSSTextFieldCell.xib in Resources */,
@@ -459,6 +466,7 @@
 				4A0146B41ABA4026007DDE52 /* TwitterSignUpTableViewController.swift in Sources */,
 				4A6924C41AB733F50019487A /* ZSSGroupQuerier.swift in Sources */,
 				4A7C60491AB7A23800DA34B1 /* ZSSLocalStore.swift in Sources */,
+				4AA5BB301ABE61A900CE458A /* ZSSTextViewCell.swift in Sources */,
 				4AD7305A1ABA606300A9F32B /* ZSSButtonCell.swift in Sources */,
 				4A613FD21AB7268F00D0F331 /* AppDelegate.swift in Sources */,
 				4A7C60401AB74A5600DA34B1 /* ZSSLoginQuerier.swift in Sources */,

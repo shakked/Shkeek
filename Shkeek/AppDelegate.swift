@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let lvc = ZSSLoginViewController()
                 window?.rootViewController = lvc
             } else {
-                let hvc = ZSSHomeViewController()
+                let hvc = ZSSGroupCreateTableViewController()
                 let nav = UINavigationController(rootViewController: hvc)
                 window?.rootViewController = nav
             }
