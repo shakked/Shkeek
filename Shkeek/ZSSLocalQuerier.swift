@@ -37,8 +37,20 @@ class ZSSLocalQuerier: NSObject {
         return ZSSLocalFactory.sharedFactory.createUser()!
     }
     
+    func groups() -> [NSManagedObject] {
+        return ZSSLocalStore.sharedQuerier.groups()
+    }
+    
     func deleteCurrentUser() -> Void {
         ZSSLocalStore.sharedQuerier.deleteUser()
+    }
+    
+    func getGroup(#objectId: String) {
+        for group in groups() {
+            if let groupObjectId = group.valueForKey("objectId") as? String {
+                if objectId ==
+            }
+        }
     }
     
 }

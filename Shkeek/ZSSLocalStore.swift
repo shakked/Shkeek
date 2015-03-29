@@ -34,7 +34,7 @@ public class ZSSLocalStore: NSObject {
         return privateUser
     }
     
-    public func groups() -> [NSManagedObject]? {
+    public func groups() -> [NSManagedObject]! {
         if (privateGroups == nil) {
             return []
         } else {
