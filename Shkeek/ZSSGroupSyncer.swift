@@ -29,25 +29,6 @@ class ZSSGroupSyncer: NSObject {
         }
     }
     
-    private func getLocalGroupIds() -> [String] {
-        let localGroups = ZSSLocalQuerier.sharedQuerier.groups();
-        var localGroupsIds : [String] = []
-        for group in localGroups {
-            let groupId = group.valueForKey("objectId") as String
-            localGroupsIds.append(groupId)
-        }
-        return localGroupsIds
-    }
-    
-    private func getCloudGroupIds(#cloudGroups: [PFObject]) -> [String] {
-        var cloudGroupIds : [String] = []
-        for group in cloudGroups {
-            let groupId = group.objectId
-            cloudGroupIds.append(groupId)
-        }
-        return cloudGroupIds
-    }
-    
     private func updateGroupLocally(cloudGroup: PFObject) -> Void {
         let groupExistsLocally = ZSSLocalQuerier.sharedQuerier.groupExists(groupIdInSearchOf: cloudGroup.objectId)
         if groupExistsLocally {

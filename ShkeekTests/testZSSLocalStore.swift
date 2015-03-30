@@ -1,3 +1,5 @@
+
+
 //
 //  testZSSLocalStore.swift
 //  Shkeek
@@ -50,18 +52,18 @@ class testZSSLocalStore: XCTestCase {
     }
     
     func testCreatGroup() {
-        let group = ZSSLocalStore.sharedQuerier.createGroup()?
+        let group = ZSSLocalStore.sharedQuerier.createGroup()
         XCTAssertNotNil(group)
         
-        group?.setValue("testCode", forKey: "code")
-        group?.setValue(NSNumber(int: 3000), forKey: "followerCount")
-        group?.setValue(NSNumber(bool: true), forKey: "isBanned")
-        group?.setValue(NSNumber(bool: true), forKey: "isHidden")
-        group?.setValue(NSNumber(bool: true), forKey: "isPrivate")
-        group?.setValue(NSNumber(bool: true), forKey: "isPublic")
-        group?.setValue(NSNumber(bool: true), forKey: "isPremium")
-        group?.setValue("testGroupName", forKey: "name")
-        group?.setValue("testObjectId", forKey: "objectId")
+        group.setValue("testCode", forKey: "code")
+        group.setValue(NSNumber(int: 3000), forKey: "followerCount")
+        group.setValue(NSNumber(bool: true), forKey: "isBanned")
+        group.setValue(NSNumber(bool: true), forKey: "isHidden")
+        group.setValue(NSNumber(bool: true), forKey: "isPrivate")
+        group.setValue(NSNumber(bool: true), forKey: "isPublic")
+        group.setValue(NSNumber(bool: true), forKey: "isPremium")
+        group.setValue("testGroupName", forKey: "name")
+        group.setValue("testObjectId", forKey: "objectId")
         
         let retrievedGroup : NSManagedObject = ZSSLocalStore.sharedQuerier.fetchGroupWithObjectId(objectId: "testObjectId")! as NSManagedObject
         XCTAssert(retrievedGroup.valueForKey("code")!.isEqual("testCode"))
