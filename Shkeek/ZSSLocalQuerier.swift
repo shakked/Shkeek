@@ -45,12 +45,16 @@ class ZSSLocalQuerier: NSObject {
         ZSSLocalStore.sharedQuerier.deleteUser()
     }
     
-    func getGroup(#objectId: String) {
-        for group in groups() {
-            if let groupObjectId = group.valueForKey("objectId") as? String {
-                if objectId ==
+    func groupExists(#groupIdInSearchOf: NSString) -> Bool{
+        let groups = self.groups() as NSArray
+        for group in groups {
+            if let groupId = group.valueForKey("objectId") as? NSString {
+                if groupId.isEqualToString(groupIdInSearchOf) {
+                    return true
+                }
             }
         }
+        return false
     }
     
 }

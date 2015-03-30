@@ -49,9 +49,19 @@ class ZSSGroupSyncer: NSObject {
         return cloudGroupIds
     }
     
-    private func localGroupForCloudUser(cloudUser: [PFObject]) ->  {
-        //YOU WERE FINISHING IMPLEMENTING THE GROUP SYNC
+    private func localGroupForCloudUser(cloudGroup: PFObject) -> Void {
+        let groupExistsLocally = ZSSLocalQuerier.sharedQuerier.groupExists(groupIdInSearchOf: cloudGroup.objectId)
+        if groupExistsLocally {
+            
+        }
+        
     }
+    
+    private func syncLocalGroupForCloudGroup(cloudGroup: PFObject) -> Void {
+        
+    }
+    
+    private func 
     
     
     
