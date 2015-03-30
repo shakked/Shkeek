@@ -22,7 +22,7 @@ class ZSSLocalFactory: NSObject {
         return ZSSLocalStore.sharedQuerier.createUser()
     }
     
-    func createGroup() -> NSManagedObject? {
+    func createGroup() -> NSManagedObject {
         return ZSSLocalStore.sharedQuerier.createGroup()
     }
     

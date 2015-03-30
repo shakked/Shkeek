@@ -42,7 +42,7 @@ public class ZSSLocalStore: NSObject {
         }
     }
     
-    public func createGroup() -> NSManagedObject? {
+    public func createGroup() -> NSManagedObject {
         
         var group : NSManagedObject = NSEntityDescription.insertNewObjectForEntityForName("ZSSGroup", inManagedObjectContext: context) as NSManagedObject
         privateGroups!.append(group)

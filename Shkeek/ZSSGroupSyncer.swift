@@ -21,12 +21,11 @@ class ZSSGroupSyncer: NSObject {
         ZSSGroupQuerier.sharedQuerier.fetchGroups { (groups: [PFObject]?, succeeded: Bool) -> Void in
             if !succeeded {
                 completion(succeeded: false)
-            } else {
-                let localGroupIds = self.getLocalGroupIds()
-                let cloudGroupIds = self.getCloudGroupIds(cloudGroups: groups!)
-                
+                return
             }
-            
+            for group in groups! {
+                self.updateGroupLocally(group)
+            }
         }
     }
     
@@ -49,21 +48,31 @@ class ZSSGroupSyncer: NSObject {
         return cloudGroupIds
     }
     
-    private func localGroupForCloudUser(cloudGroup: PFObject) -> Void {
+    private func updateGroupLocally(cloudGroup: PFObject) -> Void {
         let groupExistsLocally = ZSSLocalQuerier.sharedQuerier.groupExists(groupIdInSearchOf: cloudGroup.objectId)
         if groupExistsLocally {
-            
+            syncLocalGroupForCloudGroup(cloudGroup)
+        } else {
+            let newGroup = ZSSLocalFactory.sharedFactory.createGroup()
+            syncLocalGroupForCloudGroup(cloudGroup)
         }
-        
     }
     
     private func syncLocalGroupForCloudGroup(cloudGroup: PFObject) -> Void {
+        if let localGroup = ZSSLocalQuerier.sharedQuerier.groupForObjectId(cloudGroup.objectId) {
+            localGroup.setValue(cloudGroup.valueForKey("category"), forKey: "category")
+            localGroup.setValue(cloudGroup.valueForKey("code"), forKey: "code")
+            localGroup.setValue(cloudGroup.valueForKey("followerCount"), forKey: "followerCount")
+            localGroup.setValue(cloudGroup.valueForKey("groupDescription"), forKey: "groupDescription")
+            localGroup.setValue(cloudGroup.valueForKey("isBanned"), forKey: "isBanned")
+            localGroup.setValue(cloudGroup.valueForKey("isHidden"), forKey: "isHidden")
+            localGroup.setValue(cloudGroup.valueForKey("isPremium"), forKey: "isPremium")
+            localGroup.setValue(cloudGroup.valueForKey("isPrivate"), forKey: "isPrivate")
+            localGroup.setValue(cloudGroup.valueForKey("isPublic"), forKey: "isPublic")
+            localGroup.setValue(cloudGroup.valueForKey("name"), forKey: "name")
+        }
         
     }
-    
-    private func 
-    
-    
     
     
 }
