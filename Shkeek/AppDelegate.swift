@@ -27,9 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let lvc = ZSSLoginViewController()
                 window?.rootViewController = lvc
             } else {
-                let hvc = ZSSHomeViewController()
-                let nav = UINavigationController(rootViewController: hvc)
-                window?.rootViewController = nav
+                let tbc = UITabBarController()
+                let gtvc = ZSSGroupsTableViewController()
+                let gtvcNav = UINavigationController(rootViewController: gtvc)
+                gtvcNav.tabBarItem.title = "Groups"
+                tbc.viewControllers = [gtvcNav]
+                window?.rootViewController = tbc
             }
         } else {
             let lvc : ZSSLoginViewController = ZSSLoginViewController()
@@ -41,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

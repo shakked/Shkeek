@@ -41,10 +41,14 @@ class ZSSEulaViewController: UIViewController {
         }
     }
     
-    func showHome() -> Void{
-        let hvc = ZSSHomeViewController()
-        let nav = UINavigationController(rootViewController: hvc)
-        presentViewController(nav, animated: true, completion: nil)
+    func showHome() -> Void {
+        let tbc = UITabBarController()
+        let gtvc = ZSSGroupsTableViewController()
+        let gtvcNav = UINavigationController(rootViewController: gtvc)
+        gtvcNav.tabBarItem.title = "Groups"
+        tbc.viewControllers = [gtvcNav]
+        presentViewController(tbc, animated: true, completion: nil)
+
     }
     
 

@@ -25,6 +25,10 @@ class ZSSChoiceCell: UITableViewCell {
     var choice2buttonPressedBlock : ((Void) -> Void)!
     var choice3buttonPressedBlock : ((Void) -> Void)!
     
+    var isChoice1Selected : Bool = false
+    var isChoide2Selected : Bool = false
+    var isChoide3Selected : Bool = false
+    
     @IBOutlet weak var choice1button: UIButton!
     @IBOutlet weak var choice2button: UIButton!
     @IBOutlet weak var choice3button: UIButton!

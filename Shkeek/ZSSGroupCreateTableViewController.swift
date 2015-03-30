@@ -129,8 +129,30 @@ class ZSSGroupCreateTableViewController: UITableViewController {
     }
     
     func done() -> Void {
-        println("done...")
+        
     }
+    
+
+    func getGroupNameCell() -> ZSSTextFieldCell {
+        let groupNameIndexPath = NSIndexPath(forRow: 1, inSection: 0)
+        return tableView.cellForRowAtIndexPath(groupNameIndexPath) as ZSSTextFieldCell
+    }
+    
+    func getGroupName() -> String {
+        return getGroupNameCell().textField.text
+    }
+    
+    func getCategoryCell() -> ZSSTextFieldCell {
+        let categoryIndexPath = NSIndexPath(forRow: 2, inSection: 0)
+        return tableView.cellForRowAtIndexPath(categoryIndexPath) as ZSSTextFieldCell
+    }
+    
+    func getCategory() -> String {
+        return getCategoryCell().textField.text
+    }
+    
+    func get
+    
     
     func cancel() -> Void {
         dismissViewControllerAnimated(true, completion: nil)
