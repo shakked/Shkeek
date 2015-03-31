@@ -78,29 +78,11 @@ class ZSSGroupCreateTableViewController: UITableViewController {
             case 3:
                 let cell : ZSSChoiceCell = tableView.dequeueReusableCellWithIdentifier("choiceCell") as ZSSChoiceCell
                 cell.choice1button.setTitle("Public", forState: UIControlState.Normal)
-                cell.choice1buttonPressedBlock = { (Void) -> Void in
-                    println("choice1pressed")
-                }
-                cell.imageView1.backgroundColor = UIColor.blueColor()
-                cell.imageView1.layer.cornerRadius = 10.0
-                cell.imageView1.layer.masksToBounds = true
-                
+            
                 cell.choice2button.setTitle("Private", forState: UIControlState.Normal)
-                cell.choice2buttonPressedBlock = { (Void) -> Void in
-                    println("choice2pressed")
-                }
-                cell.imageView2.backgroundColor = UIColor.blueColor()
-                cell.imageView2.layer.cornerRadius = 10.0
-                cell.imageView2.layer.masksToBounds = true
                 
                 cell.choice3button.setTitle("Hidden", forState: UIControlState.Normal)
-                cell.choice3buttonPressedBlock = { (Void) -> Void in
-                    println("choice3pressed")
-                }
-                cell.imageView3.backgroundColor = UIColor.blueColor()
-                cell.imageView3.layer.cornerRadius = 10.0
-                cell.imageView3.layer.masksToBounds = true
-            
+              
                 return cell
             case 4:
                 let cell : ZSSTextViewCell = tableView.dequeueReusableCellWithIdentifier("textViewCell") as ZSSTextViewCell
@@ -129,7 +111,41 @@ class ZSSGroupCreateTableViewController: UITableViewController {
     }
     
     func done() -> Void {
+        if (areFieldsValid()) {
+            
+        }
+    }
+    
+    func areFieldsValid() -> Bool {
+        let groupName = getGroupName()
+        let category = getCategory()
+        let choices = getChoices()
+        let isPublic = choices["isPublic"]
+        let isPrivate = choices["isPrivate"]
+        let isHidden = choices["isHidden"]
+        let groupDescription = getGroupDescription()
         
+        var areValid = true
+        
+        if (groupName.utf16Count <= 0) {
+            areValid = false
+            getGroupNameCell().backgroundColor = UIColor.errorColor()
+        }
+        if (category.utf16Count <= 0) {
+            areValid = false
+            getGroupNameCell().backgroundColor = UIColor.errorColor()
+        }
+        
+        if (isPublic? == nil && isPrivate == nil && isHidden == nil) {
+            areValid = false;
+            getChoiceCell().backgroundColor = UIColor.errorColor()
+        }
+        
+        if (groupDescription.utf16Count <= 0) {
+            areValid = false
+            getGroupDescriptionCell().backgroundColor = UIColor.errorColor()
+        }
+        return areValid
     }
     
 
@@ -151,7 +167,25 @@ class ZSSGroupCreateTableViewController: UITableViewController {
         return getCategoryCell().textField.text
     }
     
-    func get
+    func getChoiceCell() -> ZSSChoiceCell {
+        let categoryIndexPath = NSIndexPath(forRow: 3, inSection: 0)
+        return tableView.cellForRowAtIndexPath(categoryIndexPath) as ZSSChoiceCell
+    }
+    
+    
+    func getChoices() -> [String: Bool] {
+        let choices = getChoiceCell().selectedChoice()
+        return ["isPublic" : choices.0, "isPrivate" : choices.1, "isHidden" : choices.2]
+    }
+    
+    func getGroupDescriptionCell() -> ZSSTextViewCell {
+        let groupDescriptionIndexPath = NSIndexPath(forRow: 4, inSection: 0)
+        return tableView.cellForRowAtIndexPath(groupDescriptionIndexPath) as ZSSTextViewCell
+    }
+    
+    func getGroupDescription() -> String {
+        return getGroupDescriptionCell().textView.text
+    }
     
     
     func cancel() -> Void {

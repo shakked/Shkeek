@@ -45,11 +45,26 @@ class ZSSGroupQuerier: NSObject {
         }
     }
     
-    
-
-    
-    
-    
+    func createGroup(#groupInfo: [String: AnyObject], completion: (error: NSError?, succeeded: Bool) -> Void) {
+        let name = groupInfo["name"] as String
+        let category = groupInfo["category"] as String
+        let groupDescription = groupInfo["getGroupDescription"] as String
+        let choices = groupInfo["choices"] as [String : Bool]
+        let isPublic = choices["isPublic"] as Bool?
+        let isPrivate = choices["isPrivate"] as Bool?
+        let isHidden = choices["isHidden"] as Bool?
+        
+        let newGroup = PFObject(className: "ZSSGroup")
+        newGroup.setValue(name, forKey: "name")
+        newGroup.setValue(category, forKey: "category")
+        newGroup.setValue(groupDescription, forKey: "groupDescription")
+        newGroup.setValue(isPublic, forKey: "isPublic")
+        newGroup.setValue(isPrivate, forKey: "isPrivate")
+        newGroup.setValue(isHidden, forKey: "isHidden")
+        newGroup.saveInBackgroundWithBlock { (succeeded: Bool, error: NSError?) -> Void in
+            completion(error: error, succeeded: succeeded)
+        }
+    }
     
     
 }
