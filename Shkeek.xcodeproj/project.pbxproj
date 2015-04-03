@@ -22,6 +22,10 @@
 		4A20C3C91AB9CCC400AC6338 /* ZSSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A20C3C71AB9CCC400AC6338 /* ZSSLoginViewController.xib */; };
 		4A25347D1ABDF88900B18435 /* ZSSHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A25347B1ABDF88900B18435 /* ZSSHomeViewController.swift */; };
 		4A25347E1ABDF88900B18435 /* ZSSHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A25347C1ABDF88900B18435 /* ZSSHomeViewController.xib */; };
+		4A410F1B1ACEF0F800772399 /* ZSSGroupDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A410F1A1ACEF0F800772399 /* ZSSGroupDetailTableViewController.swift */; };
+		4A410F241ACEF46300772399 /* ZSSLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A410F221ACEF46300772399 /* ZSSLabelCell.swift */; };
+		4A410F251ACEF46300772399 /* ZSSLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A410F231ACEF46300772399 /* ZSSLabelCell.xib */; };
+		4A410F271ACF0AD500772399 /* ZSSGroupAdminTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A410F261ACF0AD500772399 /* ZSSGroupAdminTableViewController.swift */; };
 		4A613FD21AB7268F00D0F331 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A613FD11AB7268F00D0F331 /* AppDelegate.swift */; };
 		4A613FD91AB7268F00D0F331 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A613FD81AB7268F00D0F331 /* Images.xcassets */; };
 		4A613FDC1AB7268F00D0F331 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A613FDA1AB7268F00D0F331 /* LaunchScreen.xib */; };
@@ -85,6 +89,10 @@
 		4A20C3C71AB9CCC400AC6338 /* ZSSLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSLoginViewController.xib; sourceTree = "<group>"; };
 		4A25347B1ABDF88900B18435 /* ZSSHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSHomeViewController.swift; sourceTree = "<group>"; };
 		4A25347C1ABDF88900B18435 /* ZSSHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSHomeViewController.xib; sourceTree = "<group>"; };
+		4A410F1A1ACEF0F800772399 /* ZSSGroupDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSGroupDetailTableViewController.swift; sourceTree = "<group>"; };
+		4A410F221ACEF46300772399 /* ZSSLabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLabelCell.swift; sourceTree = "<group>"; };
+		4A410F231ACEF46300772399 /* ZSSLabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSLabelCell.xib; sourceTree = "<group>"; };
+		4A410F261ACF0AD500772399 /* ZSSGroupAdminTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSGroupAdminTableViewController.swift; sourceTree = "<group>"; };
 		4A613FCC1AB7268F00D0F331 /* Shkeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shkeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A613FD01AB7268F00D0F331 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A613FD11AB7268F00D0F331 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +152,8 @@
 		4A1E44461ABA09E3002C167B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				4A410F221ACEF46300772399 /* ZSSLabelCell.swift */,
+				4A410F231ACEF46300772399 /* ZSSLabelCell.xib */,
 				4ABCAA1B1ABE5D8E008F5958 /* ZSSChoiceCell.swift */,
 				4ABCAA1C1ABE5D8E008F5958 /* ZSSChoiceCell.xib */,
 				4A1E443C1AB9FBA3002C167B /* ZSSProfilePicCell.swift */,
@@ -270,8 +280,10 @@
 		4ADAD6301AC739E000F9EA76 /* Groups */ = {
 			isa = PBXGroup;
 			children = (
-				4A9910121AC9991E0056D7B6 /* ZSSGroupsTableViewController.swift */,
 				4ABCAA191ABE5B8F008F5958 /* ZSSGroupCreateTableViewController.swift */,
+				4A9910121AC9991E0056D7B6 /* ZSSGroupsTableViewController.swift */,
+				4A410F1A1ACEF0F800772399 /* ZSSGroupDetailTableViewController.swift */,
+				4A410F261ACF0AD500772399 /* ZSSGroupAdminTableViewController.swift */,
 			);
 			name = Groups;
 			sourceTree = "<group>";
@@ -382,6 +394,7 @@
 			files = (
 				4A69A5301ABDC23500290AC5 /* ZSSEulaViewController.xib in Resources */,
 				4A1E44501ABA16FA002C167B /* Keys.plist in Resources */,
+				4A410F251ACEF46300772399 /* ZSSLabelCell.xib in Resources */,
 				4AA5BB311ABE61A900CE458A /* ZSSTextViewCell.xib in Resources */,
 				4A20C3C91AB9CCC400AC6338 /* ZSSLoginViewController.xib in Resources */,
 				4AD7305B1ABA606300A9F32B /* ZSSButtonCell.xib in Resources */,
@@ -479,9 +492,11 @@
 				4AD730561ABA4EB500A9F32B /* EmailLoginTableViewController.swift in Sources */,
 				4A1E44421AB9FFFB002C167B /* ZSSTextFieldCell.swift in Sources */,
 				4AC9152D1AB93A0A00D48150 /* Shkeek.xcdatamodeld in Sources */,
+				4A410F271ACF0AD500772399 /* ZSSGroupAdminTableViewController.swift in Sources */,
 				4A0146B61ABA4042007DDE52 /* EmailSignUpTableViewController.swift in Sources */,
 				4A13763D1ABB78740014A8A7 /* String+EmailValidator.swift in Sources */,
 				4ABCAA1A1ABE5B8F008F5958 /* ZSSGroupCreateTableViewController.swift in Sources */,
+				4A410F1B1ACEF0F800772399 /* ZSSGroupDetailTableViewController.swift in Sources */,
 				4ABCAA1D1ABE5D8E008F5958 /* ZSSChoiceCell.swift in Sources */,
 				4A7C60431AB7A15100DA34B1 /* ZSSGroupSyncer.swift in Sources */,
 				4A0146B41ABA4026007DDE52 /* TwitterSignUpTableViewController.swift in Sources */,
@@ -493,6 +508,7 @@
 				4A613FD21AB7268F00D0F331 /* AppDelegate.swift in Sources */,
 				4A7C60401AB74A5600DA34B1 /* ZSSLoginQuerier.swift in Sources */,
 				4A1E443E1AB9FBA3002C167B /* ZSSProfilePicCell.swift in Sources */,
+				4A410F241ACEF46300772399 /* ZSSLabelCell.swift in Sources */,
 				4AD7305D1ABB5EE400A9F32B /* ZSSUserSyncer.swift in Sources */,
 				4A0146B81ABA4AF9007DDE52 /* ZSSLocalQuerier.swift in Sources */,
 				4A20C3C81AB9CCC400AC6338 /* ZSSLoginViewController.swift in Sources */,

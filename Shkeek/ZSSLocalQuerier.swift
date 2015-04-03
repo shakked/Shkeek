@@ -53,6 +53,25 @@ class ZSSLocalQuerier: NSObject {
         return nil
     }
     
+    func createGroup(#groupInfo: [String: AnyObject]) {
+        let name = groupInfo["name"] as String
+        let category = groupInfo["category"] as String
+        let groupDescription = groupInfo["groupDescription"] as String
+        let choices = groupInfo["choices"] as [String : Bool]
+        let isPublic = choices["isPublic"] as Bool?
+        let isPrivate = choices["isPrivate"] as Bool?
+        let isHidden = choices["isHidden"] as Bool?
+        
+        let newGroup : NSManagedObject = ZSSLocalFactory.sharedFactory.createGroup()
+        newGroup.setValue(name, forKey: "name")
+        newGroup.setValue(category, forKey: "category")
+        newGroup.setValue(groupDescription, forKey: "groupDescription")
+        newGroup.setValue(isPublic, forKey: "isPublic")
+        newGroup.setValue(isPrivate, forKey: "isPrivate")
+        newGroup.setValue(isHidden, forKey: "isHidden")
+        ZSSLocalStore.sharedQuerier.saveCoreDataChanges()
+    }
+    
     func deleteCurrentUser() -> Void {
         ZSSLocalStore.sharedQuerier.deleteUser()
     }

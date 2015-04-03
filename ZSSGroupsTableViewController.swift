@@ -54,6 +54,13 @@ class ZSSGroupsTableViewController: UITableViewController {
         return cell!
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let group = groups[indexPath.row]
+        let gdtvc = ZSSGroupDetailTableViewController()
+        gdtvc.group = group
+        self.navigationController?.pushViewController(gdtvc, animated: true)
+    }
+    
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 50
     }
@@ -62,10 +69,6 @@ class ZSSGroupsTableViewController: UITableViewController {
         return self.groups.count
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

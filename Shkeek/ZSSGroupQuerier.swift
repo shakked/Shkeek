@@ -48,7 +48,7 @@ class ZSSGroupQuerier: NSObject {
     func createGroup(#groupInfo: [String: AnyObject], completion: (error: NSError?, succeeded: Bool) -> Void) {
         let name = groupInfo["name"] as String
         let category = groupInfo["category"] as String
-        let groupDescription = groupInfo["getGroupDescription"] as String
+        let groupDescription = groupInfo["groupDescription"] as String
         let choices = groupInfo["choices"] as [String : Bool]
         let isPublic = choices["isPublic"] as Bool?
         let isPrivate = choices["isPrivate"] as Bool?
@@ -62,6 +62,9 @@ class ZSSGroupQuerier: NSObject {
         newGroup.setValue(isPrivate, forKey: "isPrivate")
         newGroup.setValue(isHidden, forKey: "isHidden")
         newGroup.saveInBackgroundWithBlock { (succeeded: Bool, error: NSError?) -> Void in
+            if succeeded {
+                ZSSLocalQuerier.sharedQuerier.createGroup(groupInfo: groupInfo)
+            }
             completion(error: error, succeeded: succeeded)
         }
     }

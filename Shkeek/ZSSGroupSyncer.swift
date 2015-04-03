@@ -26,6 +26,7 @@ class ZSSGroupSyncer: NSObject {
             for group in groups! {
                 self.updateGroupLocally(group)
             }
+            completion(succeeded: succeeded)
         }
     }
     

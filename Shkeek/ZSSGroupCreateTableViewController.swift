@@ -112,7 +112,14 @@ class ZSSGroupCreateTableViewController: UITableViewController {
     
     func done() -> Void {
         if (areFieldsValid()) {
-            
+            let groupInfo : [String: AnyObject] = ["name":getGroupName(), "category":getCategory(), "groupDescription":getGroupDescription(), "choices":getChoices()];
+            ZSSGroupQuerier.sharedQuerier.createGroup(groupInfo: groupInfo, completion: { (error, succeeded) -> Void in
+                if succeeded {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                } else {
+                    println("problem creating group")
+                }
+            })
         }
     }
     
