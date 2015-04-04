@@ -22,13 +22,12 @@ class ZSSGroupCreateTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     func configureViews() -> Void {
-        configureTableView()
         configureNavBar()
+        configureTableView()
     }
     
     func configureTableView() -> Void {
         tableView.registerNib(UINib(nibName: "ZSSTextFieldCell", bundle: nil), forCellReuseIdentifier: "fieldCell")
-        tableView.registerNib(UINib(nibName: "ZSSProfilePicCell", bundle: nil), forCellReuseIdentifier: "profileCell")
         tableView.registerNib(UINib(nibName: "ZSSTextViewCell", bundle: nil), forCellReuseIdentifier: "textViewCell")
         tableView.registerNib(UINib(nibName: "ZSSChoiceCell", bundle: nil), forCellReuseIdentifier: "choiceCell")
         tableView.backgroundColor? = UIColor.cloudColor()

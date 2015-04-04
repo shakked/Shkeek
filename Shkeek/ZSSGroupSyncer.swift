@@ -53,8 +53,17 @@ class ZSSGroupSyncer: NSObject {
             localGroup.setValue(cloudGroup.valueForKey("isPublic"), forKey: "isPublic")
             localGroup.setValue(cloudGroup.valueForKey("name"), forKey: "name")
         }
-        
     }
+    
+    private func syncAdminStatusForGroups(completion:((succeeded: Bool) -> Void)) {
+        let adminGroupQuery = PFQuery(className: "ZSSGroup")
+        adminGroupQuery.whereKey("admins", equalTo: PFUser.currentUser())
+        adminGroupQuery.findObjectsInBackgroundWithBlock { (groups: [AnyObject]!, error: NSError?) -> Void in
+            
+        }
+    }
+    
+    
     
     
 }
