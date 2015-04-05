@@ -34,7 +34,8 @@ class ZSSGroupAdminTableViewController: UITableViewController {
     }
     
     func configureNavBarButtons() -> Void {
-        
+        let newAnnouncementBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: Selector("newAnnouncementPressed"))
+        navigationItem.rightBarButtonItem = newAnnouncementBarButton
     }
     
     
@@ -98,6 +99,10 @@ class ZSSGroupAdminTableViewController: UITableViewController {
         default:
             return 100
         }
+    }
+    
+    func newAnnouncementPressed() -> Void {
+        
     }
 
 
