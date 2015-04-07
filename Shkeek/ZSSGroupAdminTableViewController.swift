@@ -66,7 +66,7 @@ class ZSSGroupAdminTableViewController: UITableViewController {
         case 2:
             let cell = tableView.dequeueReusableCellWithIdentifier("textViewCell") as ZSSTextViewCell
             cell.textView.text = group.valueForKey("groupDescription") as? String
-            cell.textView.editable = false
+            cell.textView.editable = false 
             return cell
         case 3:
             let cell = tableView.dequeueReusableCellWithIdentifier("labelCell") as ZSSLabelCell
