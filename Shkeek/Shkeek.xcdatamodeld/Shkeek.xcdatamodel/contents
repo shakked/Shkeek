@@ -8,6 +8,7 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="views" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ZSSUser" inverseName="announcementsCreated" inverseEntity="ZSSUser" syncable="YES"/>
+        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ZSSGroup" inverseName="announcements" inverseEntity="ZSSGroup" syncable="YES"/>
     </entity>
     <entity name="ZSSChoice" syncable="YES">
         <attribute name="choice" optional="YES" attributeType="String" syncable="YES"/>
@@ -30,7 +31,9 @@
         <attribute name="profilePicture" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="reportedCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="admins" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSUser" inverseName="groupsAdministrating" inverseEntity="ZSSUser" syncable="YES"/>
+        <relationship name="announcements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSAnnouncement" inverseName="group" inverseEntity="ZSSAnnouncement" syncable="YES"/>
         <relationship name="creator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ZSSUser" inverseName="groupsCreated" inverseEntity="ZSSUser" syncable="YES"/>
+        <relationship name="followers" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ZSSUser" inverseName="groupsFollowing" inverseEntity="ZSSUser" syncable="YES"/>
         <relationship name="questionaires" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSQuestionaire" inverseName="group" inverseEntity="ZSSQuestionaire" syncable="YES"/>
     </entity>
     <entity name="ZSSQuestion" syncable="YES">
@@ -61,14 +64,15 @@
         <relationship name="announcementsCreated" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ZSSAnnouncement" inverseName="author" inverseEntity="ZSSAnnouncement" syncable="YES"/>
         <relationship name="groupsAdministrating" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSGroup" inverseName="admins" inverseEntity="ZSSGroup" syncable="YES"/>
         <relationship name="groupsCreated" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ZSSGroup" inverseName="creator" inverseEntity="ZSSGroup" syncable="YES"/>
+        <relationship name="groupsFollowing" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ZSSGroup" inverseName="followers" inverseEntity="ZSSGroup" syncable="YES"/>
         <relationship name="questionairesCreated" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ZSSQuestionaire" inverseName="author" inverseEntity="ZSSQuestionaire" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ZSSGroup" positionX="-54" positionY="36" width="128" height="313"/>
-        <element name="ZSSUser" positionX="-63" positionY="-18" width="128" height="298"/>
+        <element name="ZSSGroup" positionX="-54" positionY="36" width="128" height="343"/>
+        <element name="ZSSUser" positionX="-63" positionY="-18" width="128" height="313"/>
         <element name="ZSSQuestionaire" positionX="-54" positionY="135" width="128" height="103"/>
         <element name="ZSSQuestion" positionX="-36" positionY="153" width="128" height="88"/>
         <element name="ZSSChoice" positionX="-27" positionY="162" width="128" height="73"/>
-        <element name="ZSSAnnouncement" positionX="-9" positionY="171" width="128" height="148"/>
+        <element name="ZSSAnnouncement" positionX="-9" positionY="171" width="128" height="163"/>
     </elements>
 </model>

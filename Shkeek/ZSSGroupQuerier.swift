@@ -30,10 +30,10 @@ class ZSSGroupQuerier: NSObject {
     }
     
     func fetchGroups(completion: ((groups: [PFObject]?, succeeded: Bool) -> Void)) {
-        let groupQuery = PFQuery(className: "ZSSFollow")
-        groupQuery.whereKey("follower", equalTo: PFUser.currentUser())
-        groupQuery.includeKey("group")
+        let groupQuery = PFQuery(className: "ZSSGroup")
+        groupQuery.whereKey("followers", equalTo: PFUser.currentUser())
         groupQuery.limit = 1000
+        
         
         groupQuery.findObjectsInBackgroundWithBlock { (groups:[AnyObject]!, error:NSError?) -> Void in
             if let error = error {
