@@ -50,11 +50,13 @@
 		4AC9152E1AB93A0A00D48150 /* Shkeek.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9152B1AB93A0A00D48150 /* Shkeek.xcdatamodeld */; };
 		4AC915301AB9466600D48150 /* Array+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9152F1AB9466600D48150 /* Array+Convenience.swift */; };
 		4AC915311AB9466600D48150 /* Array+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9152F1AB9466600D48150 /* Array+Convenience.swift */; };
+		4ACCED161AD5EE0C0013E688 /* ZSSFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCED151AD5EE0C0013E688 /* ZSSFeedTableViewController.swift */; };
+		4ACCED1A1AD5F1C60013E688 /* ZSSAnnouncementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCED181AD5F1C60013E688 /* ZSSAnnouncementCell.swift */; };
+		4ACCED1B1AD5F1C60013E688 /* ZSSAnnouncementCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4ACCED191AD5F1C60013E688 /* ZSSAnnouncementCell.xib */; };
 		4AD730561ABA4EB500A9F32B /* EmailLoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD730551ABA4EB500A9F32B /* EmailLoginTableViewController.swift */; };
 		4AD7305A1ABA606300A9F32B /* ZSSButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD730581ABA606300A9F32B /* ZSSButtonCell.swift */; };
 		4AD7305B1ABA606300A9F32B /* ZSSButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AD730591ABA606300A9F32B /* ZSSButtonCell.xib */; };
 		4AD7305D1ABB5EE400A9F32B /* ZSSUserSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD7305C1ABB5EE400A9F32B /* ZSSUserSyncer.swift */; };
-		4AE9895B1AD5E57D0005118E /* ZSSAnnouncmentQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE9895A1AD5E57D0005118E /* ZSSAnnouncmentQuerier.swift */; };
 		4AF848AF1AC990EA001D27DB /* testZSSGroupSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF848AE1AC990EA001D27DB /* testZSSGroupSyncer.swift */; };
 		7D808C7060384B26A93FBCB3 /* libPods-Shkeek.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C84BA62B13AC54C8E5A4C0 /* libPods-Shkeek.a */; };
 		D6D8B4F6A49043D778EDE599 /* libPods-ShkeekTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1363611A5C07FAC38A5BD312 /* libPods-ShkeekTests.a */; };
@@ -122,11 +124,13 @@
 		4AC915291AB92F4D00D48150 /* ShkeekTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShkeekTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		4AC9152C1AB93A0A00D48150 /* Shkeek.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shkeek.xcdatamodel; sourceTree = "<group>"; };
 		4AC9152F1AB9466600D48150 /* Array+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Array+Convenience.swift"; path = "Shkeek/Array+Convenience.swift"; sourceTree = SOURCE_ROOT; };
+		4ACCED151AD5EE0C0013E688 /* ZSSFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSFeedTableViewController.swift; sourceTree = "<group>"; };
+		4ACCED181AD5F1C60013E688 /* ZSSAnnouncementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSAnnouncementCell.swift; sourceTree = "<group>"; };
+		4ACCED191AD5F1C60013E688 /* ZSSAnnouncementCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSAnnouncementCell.xib; sourceTree = "<group>"; };
 		4AD730551ABA4EB500A9F32B /* EmailLoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLoginTableViewController.swift; sourceTree = "<group>"; };
 		4AD730581ABA606300A9F32B /* ZSSButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSButtonCell.swift; sourceTree = "<group>"; };
 		4AD730591ABA606300A9F32B /* ZSSButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSButtonCell.xib; sourceTree = "<group>"; };
 		4AD7305C1ABB5EE400A9F32B /* ZSSUserSyncer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSUserSyncer.swift; sourceTree = "<group>"; };
-		4AE9895A1AD5E57D0005118E /* ZSSAnnouncmentQuerier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSAnnouncmentQuerier.swift; sourceTree = "<group>"; };
 		4AF848AE1AC990EA001D27DB /* testZSSGroupSyncer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testZSSGroupSyncer.swift; sourceTree = "<group>"; };
 		8D1DF9FFD5BD9FD5FECF18FC /* Pods-Shkeek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shkeek.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shkeek/Pods-Shkeek.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +171,8 @@
 				4AA5BB2E1ABE61A900CE458A /* ZSSTextViewCell.swift */,
 				4AA5BB2F1ABE61A900CE458A /* ZSSTextViewCell.xib */,
 				4A9910141AC9996D0056D7B6 /* ZSSGroupCell.swift */,
+				4ACCED181AD5F1C60013E688 /* ZSSAnnouncementCell.swift */,
+				4ACCED191AD5F1C60013E688 /* ZSSAnnouncementCell.xib */,
 				4A9910151AC9996D0056D7B6 /* ZSSGroupCell.xib */,
 			);
 			name = Cells;
@@ -177,7 +183,6 @@
 			children = (
 				4AC9152B1AB93A0A00D48150 /* Shkeek.xcdatamodeld */,
 				4A6924C31AB733F50019487A /* ZSSGroupQuerier.swift */,
-				4AE9895A1AD5E57D0005118E /* ZSSAnnouncmentQuerier.swift */,
 				4A7C60421AB7A15100DA34B1 /* ZSSGroupSyncer.swift */,
 				4A7C603F1AB74A5600DA34B1 /* ZSSLoginQuerier.swift */,
 				4A0146B71ABA4AF9007DDE52 /* ZSSLocalQuerier.swift */,
@@ -195,6 +200,7 @@
 				4ABCAA181ABE5B53008F5958 /* StartUp */,
 				4A25347B1ABDF88900B18435 /* ZSSHomeViewController.swift */,
 				4A25347C1ABDF88900B18435 /* ZSSHomeViewController.xib */,
+				4ACCED171AD5EE160013E688 /* Feed */,
 				4ADAD6301AC739E000F9EA76 /* Groups */,
 				4A1E44461ABA09E3002C167B /* Cells */,
 			);
@@ -278,6 +284,14 @@
 				4A0146B51ABA4042007DDE52 /* EmailSignUpTableViewController.swift */,
 			);
 			name = StartUp;
+			sourceTree = "<group>";
+		};
+		4ACCED171AD5EE160013E688 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				4ACCED151AD5EE0C0013E688 /* ZSSFeedTableViewController.swift */,
+			);
+			name = Feed;
 			sourceTree = "<group>";
 		};
 		4ADAD6301AC739E000F9EA76 /* Groups */ = {
@@ -400,6 +414,7 @@
 				4A410F251ACEF46300772399 /* ZSSLabelCell.xib in Resources */,
 				4AA5BB311ABE61A900CE458A /* ZSSTextViewCell.xib in Resources */,
 				4A20C3C91AB9CCC400AC6338 /* ZSSLoginViewController.xib in Resources */,
+				4ACCED1B1AD5F1C60013E688 /* ZSSAnnouncementCell.xib in Resources */,
 				4AD7305B1ABA606300A9F32B /* ZSSButtonCell.xib in Resources */,
 				4A1E44431AB9FFFB002C167B /* ZSSTextFieldCell.xib in Resources */,
 				4A9910171AC9996D0056D7B6 /* ZSSGroupCell.xib in Resources */,
@@ -501,6 +516,7 @@
 				4ABCAA1A1ABE5B8F008F5958 /* ZSSGroupCreateTableViewController.swift in Sources */,
 				4A410F1B1ACEF0F800772399 /* ZSSGroupDetailTableViewController.swift in Sources */,
 				4ABCAA1D1ABE5D8E008F5958 /* ZSSChoiceCell.swift in Sources */,
+				4ACCED161AD5EE0C0013E688 /* ZSSFeedTableViewController.swift in Sources */,
 				4A7C60431AB7A15100DA34B1 /* ZSSGroupSyncer.swift in Sources */,
 				4A0146B41ABA4026007DDE52 /* TwitterSignUpTableViewController.swift in Sources */,
 				4A9910131AC9991E0056D7B6 /* ZSSGroupsTableViewController.swift in Sources */,
@@ -519,7 +535,7 @@
 				4A9910161AC9996D0056D7B6 /* ZSSGroupCell.swift in Sources */,
 				4A69A52F1ABDC23500290AC5 /* ZSSEulaViewController.swift in Sources */,
 				4AC915301AB9466600D48150 /* Array+Convenience.swift in Sources */,
-				4AE9895B1AD5E57D0005118E /* ZSSAnnouncmentQuerier.swift in Sources */,
+				4ACCED1A1AD5F1C60013E688 /* ZSSAnnouncementCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
