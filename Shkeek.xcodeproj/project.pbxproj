@@ -34,6 +34,12 @@
 		4A69A52F1ABDC23500290AC5 /* ZSSEulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69A52D1ABDC23500290AC5 /* ZSSEulaViewController.swift */; };
 		4A69A5301ABDC23500290AC5 /* ZSSEulaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A69A52E1ABDC23500290AC5 /* ZSSEulaViewController.xib */; };
 		4A76DA571AD6D3BC009C960A /* ZSSImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A76DA561AD6D3BC009C960A /* ZSSImageTransformer.m */; };
+		4A76DA5A1AD6D557009C960A /* ZSSGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A76DA591AD6D557009C960A /* ZSSGroup.m */; };
+		4A76DA5D1AD6D558009C960A /* ZSSAnnouncement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A76DA5C1AD6D558009C960A /* ZSSAnnouncement.m */; };
+		4A76DA601AD6D558009C960A /* ZSSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A76DA5F1AD6D558009C960A /* ZSSUser.m */; };
+		4A76DA631AD6D558009C960A /* ZSSChoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A76DA621AD6D558009C960A /* ZSSChoice.m */; };
+		4A76DA661AD6D559009C960A /* ZSSQuestionaire.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A76DA651AD6D559009C960A /* ZSSQuestionaire.m */; };
+		4A76DA691AD6D559009C960A /* ZSSQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A76DA681AD6D559009C960A /* ZSSQuestion.m */; };
 		4A7C60401AB74A5600DA34B1 /* ZSSLoginQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C603F1AB74A5600DA34B1 /* ZSSLoginQuerier.swift */; };
 		4A7C60431AB7A15100DA34B1 /* ZSSGroupSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60421AB7A15100DA34B1 /* ZSSGroupSyncer.swift */; };
 		4A7C60461AB7A23100DA34B1 /* ZSSLocalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */; };
@@ -110,6 +116,18 @@
 		4A69A52E1ABDC23500290AC5 /* ZSSEulaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZSSEulaViewController.xib; path = ../ZSSEulaViewController.xib; sourceTree = "<group>"; };
 		4A76DA551AD6D3BC009C960A /* ZSSImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSImageTransformer.h; sourceTree = "<group>"; };
 		4A76DA561AD6D3BC009C960A /* ZSSImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSImageTransformer.m; sourceTree = "<group>"; };
+		4A76DA581AD6D557009C960A /* ZSSGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSGroup.h; sourceTree = "<group>"; };
+		4A76DA591AD6D557009C960A /* ZSSGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSGroup.m; sourceTree = "<group>"; };
+		4A76DA5B1AD6D558009C960A /* ZSSAnnouncement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSAnnouncement.h; sourceTree = "<group>"; };
+		4A76DA5C1AD6D558009C960A /* ZSSAnnouncement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSAnnouncement.m; sourceTree = "<group>"; };
+		4A76DA5E1AD6D558009C960A /* ZSSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSUser.h; sourceTree = "<group>"; };
+		4A76DA5F1AD6D558009C960A /* ZSSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSUser.m; sourceTree = "<group>"; };
+		4A76DA611AD6D558009C960A /* ZSSChoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSChoice.h; sourceTree = "<group>"; };
+		4A76DA621AD6D558009C960A /* ZSSChoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSChoice.m; sourceTree = "<group>"; };
+		4A76DA641AD6D559009C960A /* ZSSQuestionaire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSQuestionaire.h; sourceTree = "<group>"; };
+		4A76DA651AD6D559009C960A /* ZSSQuestionaire.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSQuestionaire.m; sourceTree = "<group>"; };
+		4A76DA671AD6D559009C960A /* ZSSQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSQuestion.h; sourceTree = "<group>"; };
+		4A76DA681AD6D559009C960A /* ZSSQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSQuestion.m; sourceTree = "<group>"; };
 		4A7C603F1AB74A5600DA34B1 /* ZSSLoginQuerier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLoginQuerier.swift; sourceTree = "<group>"; };
 		4A7C60421AB7A15100DA34B1 /* ZSSGroupSyncer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSGroupSyncer.swift; sourceTree = "<group>"; };
 		4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLocalFactory.swift; sourceTree = "<group>"; };
@@ -185,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				4AC9152B1AB93A0A00D48150 /* Shkeek.xcdatamodeld */,
+				4A76DA6A1AD6D599009C960A /* CoreData Objects */,
 				4A76DA551AD6D3BC009C960A /* ZSSImageTransformer.h */,
 				4A76DA561AD6D3BC009C960A /* ZSSImageTransformer.m */,
 				4A6924C31AB733F50019487A /* ZSSGroupQuerier.swift */,
@@ -275,6 +294,25 @@
 				4A1E444F1ABA16FA002C167B /* Keys.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4A76DA6A1AD6D599009C960A /* CoreData Objects */ = {
+			isa = PBXGroup;
+			children = (
+				4A76DA671AD6D559009C960A /* ZSSQuestion.h */,
+				4A76DA681AD6D559009C960A /* ZSSQuestion.m */,
+				4A76DA641AD6D559009C960A /* ZSSQuestionaire.h */,
+				4A76DA651AD6D559009C960A /* ZSSQuestionaire.m */,
+				4A76DA611AD6D558009C960A /* ZSSChoice.h */,
+				4A76DA621AD6D558009C960A /* ZSSChoice.m */,
+				4A76DA5E1AD6D558009C960A /* ZSSUser.h */,
+				4A76DA5F1AD6D558009C960A /* ZSSUser.m */,
+				4A76DA5B1AD6D558009C960A /* ZSSAnnouncement.h */,
+				4A76DA5C1AD6D558009C960A /* ZSSAnnouncement.m */,
+				4A76DA581AD6D557009C960A /* ZSSGroup.h */,
+				4A76DA591AD6D557009C960A /* ZSSGroup.m */,
+			);
+			name = "CoreData Objects";
 			sourceTree = "<group>";
 		};
 		4ABCAA181ABE5B53008F5958 /* StartUp */ = {
@@ -509,8 +547,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A76DA631AD6D558009C960A /* ZSSChoice.m in Sources */,
 				4A25347D1ABDF88900B18435 /* ZSSHomeViewController.swift in Sources */,
 				4A76DA571AD6D3BC009C960A /* ZSSImageTransformer.m in Sources */,
+				4A76DA5A1AD6D557009C960A /* ZSSGroup.m in Sources */,
+				4A76DA601AD6D558009C960A /* ZSSUser.m in Sources */,
+				4A76DA661AD6D559009C960A /* ZSSQuestionaire.m in Sources */,
 				4A1E44451ABA039B002C167B /* UIColor+FlatColors.swift in Sources */,
 				4A7C60461AB7A23100DA34B1 /* ZSSLocalFactory.swift in Sources */,
 				4AD730561ABA4EB500A9F32B /* EmailLoginTableViewController.swift in Sources */,
@@ -520,11 +562,13 @@
 				4A0146B61ABA4042007DDE52 /* EmailSignUpTableViewController.swift in Sources */,
 				4A13763D1ABB78740014A8A7 /* String+EmailValidator.swift in Sources */,
 				4ABCAA1A1ABE5B8F008F5958 /* ZSSGroupCreateTableViewController.swift in Sources */,
+				4A76DA691AD6D559009C960A /* ZSSQuestion.m in Sources */,
 				4A410F1B1ACEF0F800772399 /* ZSSGroupDetailTableViewController.swift in Sources */,
 				4ABCAA1D1ABE5D8E008F5958 /* ZSSChoiceCell.swift in Sources */,
 				4ACCED161AD5EE0C0013E688 /* ZSSFeedTableViewController.swift in Sources */,
 				4A7C60431AB7A15100DA34B1 /* ZSSGroupSyncer.swift in Sources */,
 				4A0146B41ABA4026007DDE52 /* TwitterSignUpTableViewController.swift in Sources */,
+				4A76DA5D1AD6D558009C960A /* ZSSAnnouncement.m in Sources */,
 				4A9910131AC9991E0056D7B6 /* ZSSGroupsTableViewController.swift in Sources */,
 				4A6924C41AB733F50019487A /* ZSSGroupQuerier.swift in Sources */,
 				4A7C60491AB7A23800DA34B1 /* ZSSLocalStore.swift in Sources */,

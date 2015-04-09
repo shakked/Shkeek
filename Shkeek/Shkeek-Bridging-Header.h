@@ -13,5 +13,11 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 #import "NSDate+DateTools.h"
+#import "ZSSQuestion.h"
+#import "ZSSQuestionaire.h"
+#import "ZSSChoice.h"
+#import "ZSSUser.h"
+#import "ZSSAnnouncement.h"
+#import "ZSSGroup.h"
 
 #endif
