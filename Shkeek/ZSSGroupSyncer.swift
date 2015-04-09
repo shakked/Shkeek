@@ -42,6 +42,49 @@ class ZSSGroupSyncer: NSObject {
         return true
     }
     
+    func advancedSyncGroups(completion:((succeeded: Bool) -> Void)) {
+        //check relations also
+        
+    }
+    
+    func followersForGroup(groupObjectId: String, completion:((succeeded: Bool, followers: [PFObject]) -> Void)) {
+        let group = PFObject(withoutDataWithClassName: "ZSSGroup", objectId: groupObjectId)
+        let followersRelation = group.relationForKey("followers")
+        followersRelation.query().findObjectsInBackgroundWithBlock { (followers: [AnyObject]!, error: NSError!) -> Void in
+            if error != nil {
+                completion(succeeded: true, followers: followers as [PFObject])
+            } else {
+                completion(succeeded: false, followers: [])
+            }
+        }
+    }
+    
+    func adminsForGroup(groupObjectId: String, completion:((succeeded: Bool, admins: [PFObject]) -> Void)) {
+        let group = PFObject(withoutDataWithClassName: "ZSSGroup", objectId: groupObjectId)
+        let adminsRelation = group.relationForKey("admins")
+        adminsRelation.query().findObjectsInBackgroundWithBlock { (admins: [AnyObject]!, error: NSError!) -> Void in
+            if error != nil {
+                completion(succeeded: true, admins: admins as [PFObject])
+            } else {
+                completion(succeeded: false, admins: [])
+            }
+        }
+    }
+    
+    func questionairesForGroup(groupObjectId: String, completion:((succeeded: Bool, questionaires: [PFObject]) -> Void)) {
+        let group = PFObject(withoutDataWithClassName: "ZSSGroup", objectId: groupObjectId)
+        let questionairesRelation = group.relationForKey("questionaires")
+        questionairesRelation.query().findObjectsInBackgroundWithBlock { (questionaires: [AnyObject]!, error: NSError!) -> Void in
+            if error != nil {
+                completion(succeeded: true, questionaires: questionaires as [PFObject])
+            } else {
+                completion(succeeded: false, questionaires: [])
+            }
+        }
+    }
+    
+    
+    
     func updateGroupLocally(cloudGroup: PFObject) -> Void {
         let shouldUpdateGroup = shouldUpdate(cloudGroup)
         if shouldUpdateGroup {
@@ -57,7 +100,8 @@ class ZSSGroupSyncer: NSObject {
     
     private func syncLocalGroupForCloudGroup(cloudGroup: PFObject) -> Void {
         if let localGroup = ZSSLocalQuerier.sharedQuerier.groupForObjectId(cloudGroup.objectId) {
-            localGroup.setValue(cloudGroup.valueForKey("announcementsLeft"), forKey: "announcementsLeft")
+            localGroup.announcementsLeft = cloudGroup.valueForKey("announcementsLeft") as NSNumber
+            localGroup.category = cloudGroup.valueForKey("category") as String
             localGroup.setValue(cloudGroup.valueForKey("category"), forKey: "category")
             localGroup.setValue(cloudGroup.valueForKey("code"), forKey: "code")
             localGroup.setValue(cloudGroup.valueForKey("dateOfLastAnnouncement"), forKey: "dateOfLastAnnouncement")
@@ -87,7 +131,6 @@ class ZSSGroupSyncer: NSObject {
         let adminGroupQuery = PFQuery(className: "ZSSGroup")
         adminGroupQuery.whereKey("admins", equalTo: PFUser.currentUser())
         adminGroupQuery.findObjectsInBackgroundWithBlock { (groups: [AnyObject]!, error: NSError?) -> Void in
-            
         }
     }
     
