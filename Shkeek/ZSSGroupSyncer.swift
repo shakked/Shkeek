@@ -69,6 +69,7 @@ class ZSSGroupSyncer: NSObject {
             localGroup.setValue(cloudGroup.valueForKey("isPrivate"), forKey: "isPrivate")
             localGroup.setValue(cloudGroup.valueForKey("isPublic"), forKey: "isPublic")
             localGroup.setValue(cloudGroup.valueForKey("name"), forKey: "name")
+            localGroup.setValue(cloudGroup.valueForKey("updatedAt"), forKey: "updatedAt")
             
             let profileImageFile = cloudGroup.valueForKey("profilePicture") as PFFile
             //TODO: TRY INCLUDE HERE->
