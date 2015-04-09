@@ -30,6 +30,7 @@
         <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profilePicture" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="reportedCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <relationship name="admins" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSUser" inverseName="groupsAdministrating" inverseEntity="ZSSUser" syncable="YES"/>
         <relationship name="announcements" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSAnnouncement" inverseName="group" inverseEntity="ZSSAnnouncement" syncable="YES"/>
         <relationship name="creator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ZSSUser" inverseName="groupsCreated" inverseEntity="ZSSUser" syncable="YES"/>
@@ -68,11 +69,11 @@
         <relationship name="questionairesCreated" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ZSSQuestionaire" inverseName="author" inverseEntity="ZSSQuestionaire" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ZSSGroup" positionX="-54" positionY="36" width="128" height="343"/>
-        <element name="ZSSUser" positionX="-63" positionY="-18" width="128" height="313"/>
-        <element name="ZSSQuestionaire" positionX="-54" positionY="135" width="128" height="103"/>
-        <element name="ZSSQuestion" positionX="-36" positionY="153" width="128" height="88"/>
-        <element name="ZSSChoice" positionX="-27" positionY="162" width="128" height="73"/>
         <element name="ZSSAnnouncement" positionX="-9" positionY="171" width="128" height="163"/>
+        <element name="ZSSChoice" positionX="-27" positionY="162" width="128" height="73"/>
+        <element name="ZSSGroup" positionX="-54" positionY="36" width="128" height="360"/>
+        <element name="ZSSQuestion" positionX="-36" positionY="153" width="128" height="88"/>
+        <element name="ZSSQuestionaire" positionX="-54" positionY="135" width="128" height="103"/>
+        <element name="ZSSUser" positionX="-63" positionY="-18" width="128" height="313"/>
     </elements>
 </model>

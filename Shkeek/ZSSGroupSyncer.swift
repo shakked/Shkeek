@@ -30,20 +30,37 @@ class ZSSGroupSyncer: NSObject {
         }
     }
     
+    func shouldUpdate(cloudGroup: PFObject) -> Bool {
+        let cloudUpdatedAt = cloudGroup.valueForKey("updatedAt") as NSDate
+        let localGroup = ZSSLocalQuerier.sharedQuerier.groupForObjectId(cloudGroup.objectId)
+        let localUpdatedAt = localGroup?.valueForKey("updatedAt") as? NSDate
+        if let localUpdatedAt = localUpdatedAt {
+            if cloudUpdatedAt.isEqualToDate(localUpdatedAt) {
+                return false
+            }
+        }
+        return true
+    }
+    
     func updateGroupLocally(cloudGroup: PFObject) -> Void {
-        let groupExistsLocally = ZSSLocalQuerier.sharedQuerier.groupExists(groupIdInSearchOf: cloudGroup.objectId)
-        if groupExistsLocally {
-            syncLocalGroupForCloudGroup(cloudGroup)
-        } else {
-            let newGroup = ZSSLocalFactory.sharedFactory.createGroup()
-            syncLocalGroupForCloudGroup(cloudGroup)
+        let shouldUpdateGroup = shouldUpdate(cloudGroup)
+        if shouldUpdateGroup {
+            let groupExistsLocally = ZSSLocalQuerier.sharedQuerier.groupExists(groupIdInSearchOf: cloudGroup.objectId)
+            if groupExistsLocally {
+                syncLocalGroupForCloudGroup(cloudGroup)
+            } else {
+                let newGroup = ZSSLocalFactory.sharedFactory.createGroup()
+                syncLocalGroupForCloudGroup(cloudGroup)
+            }
         }
     }
     
     private func syncLocalGroupForCloudGroup(cloudGroup: PFObject) -> Void {
         if let localGroup = ZSSLocalQuerier.sharedQuerier.groupForObjectId(cloudGroup.objectId) {
+            localGroup.setValue(cloudGroup.valueForKey("announcementsLeft"), forKey: "announcementsLeft")
             localGroup.setValue(cloudGroup.valueForKey("category"), forKey: "category")
             localGroup.setValue(cloudGroup.valueForKey("code"), forKey: "code")
+            localGroup.setValue(cloudGroup.valueForKey("dateOfLastAnnouncement"), forKey: "dateOfLastAnnouncement")
             localGroup.setValue(cloudGroup.valueForKey("followerCount"), forKey: "followerCount")
             localGroup.setValue(cloudGroup.valueForKey("groupDescription"), forKey: "groupDescription")
             localGroup.setValue(cloudGroup.valueForKey("isBanned"), forKey: "isBanned")
@@ -52,6 +69,16 @@ class ZSSGroupSyncer: NSObject {
             localGroup.setValue(cloudGroup.valueForKey("isPrivate"), forKey: "isPrivate")
             localGroup.setValue(cloudGroup.valueForKey("isPublic"), forKey: "isPublic")
             localGroup.setValue(cloudGroup.valueForKey("name"), forKey: "name")
+            
+            let profileImageFile = cloudGroup.valueForKey("profilePicture") as PFFile
+            //TODO: TRY INCLUDE HERE->
+            profileImageFile.getDataInBackgroundWithBlock({ (data: NSData!, error: NSError?) -> Void in
+                if let data = data {
+                    let profileImage = UIImage(data: data)!
+                    localGroup.setValue(profileImage, forKey: "profilePicture")
+                }
+            })
+            
         }
     }
     
