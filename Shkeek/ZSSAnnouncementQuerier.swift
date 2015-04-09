@@ -14,6 +14,7 @@ class ZSSAnnouncmentQuerier: NSObject {
             if let groups = groups {
                 let announcementQuery = PFQuery(className: "ZSSAnnouncement")
                 announcementQuery.whereKey("group", containedIn: groups)
+                announcementQuery.includeKey("group")
                 announcementQuery.findObjectsInBackgroundWithBlock({ (announcements: [AnyObject]!, error: NSError!) -> Void in
                     if let announcements = announcements as? [PFObject] {
                         completion(succeeded: true, announcements: announcements)

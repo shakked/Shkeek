@@ -53,7 +53,7 @@
                 <outlet property="authorNameLabel" destination="INU-ip-Ab0" id="aio-zS-dgI"/>
                 <outlet property="bodyLabel" destination="uRN-9P-Il5" id="PRJ-Nq-5aY"/>
                 <outlet property="groupNameLabel" destination="Emp-xW-T8J" id="E4s-UH-cPP"/>
-                <outlet property="profileImageview" destination="YyA-hk-fas" id="Dj9-wx-Klu"/>
+                <outlet property="profileImageView" destination="YyA-hk-fas" id="ehr-4g-spX"/>
                 <outlet property="timeLabel" destination="esV-zI-Iec" id="xvz-va-fYr"/>
                 <outlet property="titleLabel" destination="VnY-se-xd7" id="bHH-L2-QUZ"/>
             </connections>

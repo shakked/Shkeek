@@ -88,6 +88,15 @@ class ZSSLocalQuerier: NSObject {
         return false
     }
     
+    func profilePicForGroupId(groupId: String) -> UIImage {
+        if let group = groupForObjectId(groupId) {
+            if let image = group.valueForKey("profilePicture") as? UIImage {
+                return image
+            }
+        }
+        return UIImage(named: "default.png")!
+    }
+    
     
     
 }

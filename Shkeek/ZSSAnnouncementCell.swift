@@ -10,7 +10,7 @@ import UIKit
 
 class ZSSAnnouncementCell: UITableViewCell {
     
-    @IBOutlet weak var profileImageview : UIImageView!
+    @IBOutlet weak var profileImageView : UIImageView!
     @IBOutlet weak var groupNameLabel : UILabel!
     @IBOutlet weak var authorNameLabel : UILabel!
     @IBOutlet weak var timeLabel : UILabel!
@@ -22,8 +22,8 @@ class ZSSAnnouncementCell: UITableViewCell {
         super.awakeFromNib()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: Selector("profileImageViewTapped"))
-        profileImageview.addGestureRecognizer(tapGesture)
-        profileImageview.userInteractionEnabled = true
+        profileImageView.addGestureRecognizer(tapGesture)
+        profileImageView.userInteractionEnabled = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
