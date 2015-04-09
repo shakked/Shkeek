@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "69820B9CEB1A007BBB958AE2"
+               BlueprintIdentifier = "746E73AC7D4A0BE00FCCC736"
                BuildableName = "libPods-Shkeek-Facebook-iOS-SDK.a"
                BlueprintName = "Pods-Shkeek-Facebook-iOS-SDK"
                ReferencedContainer = "container:Pods.xcodeproj">

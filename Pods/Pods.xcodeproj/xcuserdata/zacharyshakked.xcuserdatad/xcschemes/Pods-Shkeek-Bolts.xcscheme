@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "89892E58F069EE4BD77CFA2B"
+               BlueprintIdentifier = "D5F40B59ECD2842B2BAE47EA"
                BuildableName = "libPods-Shkeek-Bolts.a"
                BlueprintName = "Pods-Shkeek-Bolts"
                ReferencedContainer = "container:Pods.xcodeproj">

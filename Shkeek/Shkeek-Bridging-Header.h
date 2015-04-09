@@ -12,5 +12,6 @@
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
+#import "NSDate+DateTools.h"
 
 #endif

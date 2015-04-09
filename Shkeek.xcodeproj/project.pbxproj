@@ -33,6 +33,7 @@
 		4A6924C71AB734010019487A /* ZSSAnnouncementQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6924C61AB734010019487A /* ZSSAnnouncementQuerier.swift */; };
 		4A69A52F1ABDC23500290AC5 /* ZSSEulaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A69A52D1ABDC23500290AC5 /* ZSSEulaViewController.swift */; };
 		4A69A5301ABDC23500290AC5 /* ZSSEulaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A69A52E1ABDC23500290AC5 /* ZSSEulaViewController.xib */; };
+		4A76DA571AD6D3BC009C960A /* ZSSImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A76DA561AD6D3BC009C960A /* ZSSImageTransformer.m */; };
 		4A7C60401AB74A5600DA34B1 /* ZSSLoginQuerier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C603F1AB74A5600DA34B1 /* ZSSLoginQuerier.swift */; };
 		4A7C60431AB7A15100DA34B1 /* ZSSGroupSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60421AB7A15100DA34B1 /* ZSSGroupSyncer.swift */; };
 		4A7C60461AB7A23100DA34B1 /* ZSSLocalFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */; };
@@ -107,6 +108,8 @@
 		4A6924C61AB734010019487A /* ZSSAnnouncementQuerier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSAnnouncementQuerier.swift; sourceTree = "<group>"; };
 		4A69A52D1ABDC23500290AC5 /* ZSSEulaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZSSEulaViewController.swift; path = ../ZSSEulaViewController.swift; sourceTree = "<group>"; };
 		4A69A52E1ABDC23500290AC5 /* ZSSEulaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZSSEulaViewController.xib; path = ../ZSSEulaViewController.xib; sourceTree = "<group>"; };
+		4A76DA551AD6D3BC009C960A /* ZSSImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSImageTransformer.h; sourceTree = "<group>"; };
+		4A76DA561AD6D3BC009C960A /* ZSSImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSImageTransformer.m; sourceTree = "<group>"; };
 		4A7C603F1AB74A5600DA34B1 /* ZSSLoginQuerier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLoginQuerier.swift; sourceTree = "<group>"; };
 		4A7C60421AB7A15100DA34B1 /* ZSSGroupSyncer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSGroupSyncer.swift; sourceTree = "<group>"; };
 		4A7C60451AB7A23100DA34B1 /* ZSSLocalFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSLocalFactory.swift; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				4AC9152B1AB93A0A00D48150 /* Shkeek.xcdatamodeld */,
+				4A76DA551AD6D3BC009C960A /* ZSSImageTransformer.h */,
+				4A76DA561AD6D3BC009C960A /* ZSSImageTransformer.m */,
 				4A6924C31AB733F50019487A /* ZSSGroupQuerier.swift */,
 				4A7C60421AB7A15100DA34B1 /* ZSSGroupSyncer.swift */,
 				4A7C603F1AB74A5600DA34B1 /* ZSSLoginQuerier.swift */,
@@ -505,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A25347D1ABDF88900B18435 /* ZSSHomeViewController.swift in Sources */,
+				4A76DA571AD6D3BC009C960A /* ZSSImageTransformer.m in Sources */,
 				4A1E44451ABA039B002C167B /* UIColor+FlatColors.swift in Sources */,
 				4A7C60461AB7A23100DA34B1 /* ZSSLocalFactory.swift in Sources */,
 				4AD730561ABA4EB500A9F32B /* EmailLoginTableViewController.swift in Sources */,

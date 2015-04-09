@@ -83,6 +83,20 @@ class ZSSFeedTableViewController: UITableViewController {
         let authorLastName = author.valueForKey("lastName") as String
         cell.authorNameLabel.text = "\(authorFirstName) \(authorLastName)"
         
+        let time = announcement.createdAt
+        let timeString = time.shortTimeAgoSinceNow()
+        cell.timeLabel.text = timeString
+        
+        let title = announcement.valueForKey("title") as String
+        cell.titleLabel.text = title
+        
+        if let body = announcement.valueForKey("body") as? String {
+            cell.bodyLabel.text = body
+        }
+        
+        cell.profileImageTappedBlock = {
+            println("show group profile")
+        }
 
     }
 

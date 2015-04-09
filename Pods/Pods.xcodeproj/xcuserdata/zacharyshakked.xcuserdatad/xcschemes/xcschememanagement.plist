@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Shkeek-DateTools.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Shkeek-Facebook-iOS-SDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -20,6 +25,11 @@
 			<false/>
 		</dict>
 		<key>Pods-ShkeekTests-Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ShkeekTests-DateTools.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,32 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1F230C73127878A8D36E8BD7</key>
+		<key>1E651822FA7EF8C2B39211EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6866F92076BE214CC24ED323</key>
+		<key>4473916580C33DAF735DB9AF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>69820B9CEB1A007BBB958AE2</key>
+		<key>48DBD6076D40CFD3E40A5FEA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>812A9507DD84822875490907</key>
+		<key>746E73AC7D4A0BE00FCCC736</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>89892E58F069EE4BD77CFA2B</key>
+		<key>9258DB8A050ABE50F3440281</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F79DBBA485583D00800ED289</key>
+		<key>CBA90A05BEC5CA2D6675E7F5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D5F40B59ECD2842B2BAE47EA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E1FE8F118561151337DC7E09</key>
 		<dict>
 			<key>primary</key>
 			<true/>
