@@ -12,6 +12,7 @@ class ZSSAnnouncmentQuerier: NSObject {
     func fetchAnnouncements(completion: ((succeeded: Bool, announcements:[PFObject]?) -> Void)) {
         ZSSGroupQuerier.sharedQuerier.fetchGroups { (groups: [PFObject]?, succeeded: Bool) -> Void in
             if let groups = groups {
+                self.syncGroups(groups)
                 let announcementQuery = PFQuery(className: "ZSSAnnouncement")
                 announcementQuery.whereKey("group", containedIn: groups)
                 announcementQuery.includeKey("group")
@@ -22,6 +23,12 @@ class ZSSAnnouncmentQuerier: NSObject {
                 })
             }
             completion(succeeded: false, announcements: nil)
+        }
+    }
+    
+    func syncGroups(groups: [PFObject]) -> Void {
+        for group in groups {
+            ZSSGroupSyncer.sharedQuerier.updateGroupLocally(group)
         }
     }
 }

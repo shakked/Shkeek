@@ -30,7 +30,7 @@ class ZSSGroupSyncer: NSObject {
         }
     }
     
-    private func updateGroupLocally(cloudGroup: PFObject) -> Void {
+    func updateGroupLocally(cloudGroup: PFObject) -> Void {
         let groupExistsLocally = ZSSLocalQuerier.sharedQuerier.groupExists(groupIdInSearchOf: cloudGroup.objectId)
         if groupExistsLocally {
             syncLocalGroupForCloudGroup(cloudGroup)
