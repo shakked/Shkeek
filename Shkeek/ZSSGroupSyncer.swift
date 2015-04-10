@@ -17,6 +17,9 @@ class ZSSGroupSyncer: NSObject {
         return Static.instance
     }
     
+    //todo: take into account admin syncs (is user admin of a group?) (is user creator of group?)
+    //      in group syncs
+    
     func syncGroups(completion:((succeeded: Bool) -> Void)) {
         ZSSGroupQuerier.sharedQuerier.fetchGroups { (groups: [PFObject]?, succeeded: Bool) -> Void in
             if !succeeded {
@@ -131,6 +134,7 @@ class ZSSGroupSyncer: NSObject {
         let adminGroupQuery = PFQuery(className: "ZSSGroup")
         adminGroupQuery.whereKey("admins", equalTo: PFUser.currentUser())
         adminGroupQuery.findObjectsInBackgroundWithBlock { (groups: [AnyObject]!, error: NSError?) -> Void in
+            
         }
     }
     
